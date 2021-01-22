@@ -13,78 +13,201 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{37eabf3d-5527-482d-9b97-dcdb7858fe64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManagers">
+      <UniqueIdentifier>{8ebdf9e9-4b14-45bb-99a1-609ab07efdca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{953fece3-538a-4167-af30-b2dbfd1fbbd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{4e2e7760-06a0-43c2-972c-d4c101147f66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\EntityEvents">
+      <UniqueIdentifier>{b616c91c-2509-46d3-a762-1dd4e93c58c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\EComponents">
+      <UniqueIdentifier>{b8334b08-7c68-48ca-b052-2ed233feddbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\EntityManager">
+      <UniqueIdentifier>{3ac29a38-8076-49f6-a76c-e06fe079fae9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\ESystems">
+      <UniqueIdentifier>{682c4949-39d3-4328-808b-e0f040c81ed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Observer">
+      <UniqueIdentifier>{d5979a09-15eb-415a-84e1-4f18a02a6798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\SystemManager">
+      <UniqueIdentifier>{0ef0c493-3e7b-47f3-9f53-0b375305684f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animations">
+      <UniqueIdentifier>{a81903f7-a207-44e4-922e-aeb71c79210e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EventManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SharedContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="State_Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="State_GameOver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="State_Intro.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="State_Paused.h">
+      <Filter>States</Filter>
     </ClInclude>
     <ClInclude Include="State_MainMenu.h">
-      <Filter>Header Files</Filter>
+      <Filter>States</Filter>
     </ClInclude>
-    <ClInclude Include="State_Paused.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="State_Intro.h">
+      <Filter>States</Filter>
     </ClInclude>
-    <ClInclude Include="StateManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="State_GameOver.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Game.h">
+      <Filter>States</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>ResourceManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>ResourceManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedContext.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
-      <Filter>Header Files</Filter>
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS_Types.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Base.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Position.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmask.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity_Manager.h">
+      <Filter>Entities\EntityManager</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityEvents.h">
+      <Filter>Entities\EntityEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="Event_Queue.h">
+      <Filter>Entities\EntityEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Base.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="Communicator.h">
+      <Filter>Entities\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageHandler.h">
+      <Filter>Entities\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Entities\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityMessages.h">
+      <Filter>Entities\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Entities\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="System_Manager.h">
+      <Filter>Entities\SystemManager</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Renderer.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Drawable.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugOverlay.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="C_SpriteSheet.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim_Base.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteSheet.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Directions.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Anim_Directional.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EventManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="State_Game.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="State_Intro.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="State_MainMenu.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="State_Paused.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>States</Filter>
     </ClCompile>
-    <ClCompile Include="StateManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity_Manager.cpp">
+      <Filter>Entities\EntityManager</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Base.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="System_Manager.cpp">
+      <Filter>Entities\SystemManager</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Renderer.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteSheet.cpp">
+      <Filter>Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim_Directional.cpp">
+      <Filter>Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="Anim_Base.cpp">
+      <Filter>Animations</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

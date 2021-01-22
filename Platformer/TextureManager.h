@@ -4,11 +4,11 @@
 
 class TextureManager: public ResourceManager<TextureManager, sf::Texture>{
 public:
-	TextureManager(): ResourceManager("Resources/textures.cfg"){}
+	TextureManager(): ResourceManager("Assets/textures.cfg"){}
 
 	sf::Texture* Load(const std::string& l_path){
 		sf::Texture* texture = new sf::Texture();
-		if(!texture->loadFromFile("Resources/" + l_path))
+		if(!texture->loadFromFile("Assets/" + l_path))
 		{
 			delete texture;
 			texture = nullptr;

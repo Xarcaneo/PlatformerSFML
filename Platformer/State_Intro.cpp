@@ -18,7 +18,7 @@ void State_Intro::OnCreate(){
 
 	m_introSprite.setPosition(windowSize.x / 2.0f, windowSize.y / 2.0f);
 
-	m_font.loadFromFile("Resources/media/Fonts/arial.ttf");
+	m_font.loadFromFile("Assets/media/Fonts/arial.ttf");
 	m_text.setFont(m_font);
 	m_text.setString(sf::String("Press SPACE to continue"));
 	m_text.setCharacterSize(15);

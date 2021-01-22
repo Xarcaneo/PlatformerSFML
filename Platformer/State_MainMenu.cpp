@@ -7,7 +7,7 @@ State_MainMenu::State_MainMenu(StateManager* l_stateManager)
 State_MainMenu::~State_MainMenu(){}
 
 void State_MainMenu::OnCreate(){
-	m_font.loadFromFile("Resources/media/Fonts/arial.ttf");
+	m_font.loadFromFile("Assets/media/Fonts/arial.ttf");
 	m_text.setFont(m_font);
 	m_text.setString(sf::String("MAIN MENU:"));
 	m_text.setCharacterSize(18);

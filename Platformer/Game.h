@@ -25,5 +25,7 @@ private:
 	SharedContext m_context;
 	Window m_window;
 	TextureManager m_textureManager;
+	SystemManager m_systemManager;
+	EntityManager m_entityManager;
 	StateManager m_stateManager;
 };
