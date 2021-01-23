@@ -159,9 +159,11 @@
     <ClInclude Include="Converter.h" />
     <ClInclude Include="C_Base.h" />
     <ClInclude Include="C_Body.h" />
+    <ClInclude Include="C_Controller.h" />
     <ClInclude Include="C_Drawable.h" />
     <ClInclude Include="C_Position.h" />
     <ClInclude Include="C_SpriteSheet.h" />
+    <ClInclude Include="C_State.h" />
     <ClInclude Include="DebugOverlay.h" />
     <ClInclude Include="Directions.h" />
     <ClInclude Include="ECS_Types.h" />
@@ -186,7 +188,9 @@
     <ClInclude Include="State_Paused.h" />
     <ClInclude Include="System_Manager.h" />
     <ClInclude Include="S_Base.h" />
+    <ClInclude Include="S_Control.h" />
     <ClInclude Include="S_Renderer.h" />
+    <ClInclude Include="S_State.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
@@ -206,7 +210,9 @@
     <ClCompile Include="State_Paused.cpp" />
     <ClCompile Include="System_Manager.cpp" />
     <ClCompile Include="S_Base.cpp" />
+    <ClCompile Include="S_Control.cpp" />
     <ClCompile Include="S_Renderer.cpp" />
+    <ClCompile Include="S_State.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

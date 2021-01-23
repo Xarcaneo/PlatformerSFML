@@ -2,3 +2,4 @@ SIZE 32 32
 |ENTITY|Name|x|y|elevation|
 ENTITY Player 256.0 256.0 1
 ENTITY Skeleton 90.0 90.0 1
+ENTITY Skeleton 90.0 180.0 1

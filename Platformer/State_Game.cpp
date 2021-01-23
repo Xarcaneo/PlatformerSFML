@@ -15,7 +15,6 @@ void State_Game::OnCreate(){
 	evMgr->AddCallback(StateType::Game, "Player_MoveLeft", &State_Game::PlayerMove, this);
 	evMgr->AddCallback(StateType::Game, "Player_MoveRight", &State_Game::PlayerMove, this);
 	evMgr->AddCallback(StateType::Game, "Player_MoveUp", &State_Game::PlayerMove, this);
-	evMgr->AddCallback(StateType::Game, "Player_MoveDown", &State_Game::PlayerMove, this);
 
 	sf::Vector2u size = m_stateMgr->GetContext()->m_wind->GetWindowSize();
 	m_view.setSize(size.x,size.y);
@@ -42,7 +41,6 @@ void State_Game::OnDestroy(){
 	evMgr->RemoveCallback(StateType::Game, "Player_MoveLeft");
 	evMgr->RemoveCallback(StateType::Game, "Player_MoveRight");
 	evMgr->RemoveCallback(StateType::Game, "Player_MoveUp");
-	evMgr->RemoveCallback(StateType::Game, "Player_MoveDown");
 	
 	delete m_gameMap;
 	m_gameMap = nullptr;
@@ -87,18 +85,16 @@ void State_Game::Activate(){}
 void State_Game::Deactivate(){}
 
 void State_Game::PlayerMove(EventDetails* l_details){
-	/*Message msg((MessageType)EntityMessage::Move);
+	Message msg((MessageType)EntityMessage::Move);
 	if (l_details->m_name == "Player_MoveLeft"){
 		msg.m_int = (int)Direction::Left;
 	} else if (l_details->m_name == "Player_MoveRight"){
 		msg.m_int = (int)Direction::Right;
 	} else if (l_details->m_name == "Player_MoveUp"){
 		msg.m_int = (int)Direction::Up;
-	} else if (l_details->m_name == "Player_MoveDown"){
-		msg.m_int = (int)Direction::Down;
 	}
 	msg.m_receiver = m_player;
-	m_stateMgr->GetContext()->m_systemManager->GetMessageHandler()->Dispatch(msg);*/
+	m_stateMgr->GetContext()->m_systemManager->GetMessageHandler()->Dispatch(msg);
 }
 
 void State_Game::ToggleOverlay(EventDetails* l_details){

@@ -3,10 +3,10 @@
 #include "C_Position.h"
 #include "C_SpriteSheet.h"
 #include "C_Body.h"
-/*#include "C_State.h"
-#include "C_Movable.h"
+#include "C_State.h"
+//#include "C_Movable.h"
 #include "C_Controller.h"
-#include "C_Collidable.h"*/
+//#include "C_Collidable.h"
 #include "Bitmask.h"
 #include "TextureManager.h"
 #include <unordered_map>

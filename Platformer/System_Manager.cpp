@@ -2,11 +2,11 @@
 #include "Entity_Manager.h"
 
 SystemManager::SystemManager(): m_entityManager(nullptr){
-	/*m_systems[System::State] = new S_State(this);
+	m_systems[System::State] = new S_State(this);
 	m_systems[System::Control] = new S_Control(this);
-	m_systems[System::Movement] = new S_Movement(this);
-	m_systems[System::Collision] = new S_Collision(this);
-	m_systems[System::SheetAnimation] = new S_SheetAnimation(this);*/
+	//m_systems[System::Movement] = new S_Movement(this);
+	//m_systems[System::Collision] = new S_Collision(this);
+	//m_systems[System::SheetAnimation] = new S_SheetAnimation(this);
 	m_systems[System::Renderer] = new S_Renderer(this);
 }
 

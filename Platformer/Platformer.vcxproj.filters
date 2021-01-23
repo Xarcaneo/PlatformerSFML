@@ -153,13 +153,25 @@
     <ClInclude Include="Map.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="C_Body.h">
-      <Filter>Entities\EComponents</Filter>
-    </ClInclude>
     <ClInclude Include="Converter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C_SpriteSheet.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Controller.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Control.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="C_State.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="S_State.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Body.h">
       <Filter>Entities\EComponents</Filter>
     </ClInclude>
   </ItemGroup>
@@ -214,6 +226,12 @@
     </ClCompile>
     <ClCompile Include="Anim_Base.cpp">
       <Filter>Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Control.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="S_State.cpp">
+      <Filter>Entities\ESystems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

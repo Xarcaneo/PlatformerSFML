@@ -3,24 +3,26 @@
 #include <BOX2D/box2d.h>
 #include "C_Base.h"
 #include "Converter.h"
+#include "Directions.h"
 
-class C_Body : public C_Base{
+class C_Body : public C_Base {
 public:
-	C_Body() : C_Base(Component::Body), m_world(nullptr) {}
-	~C_Body() {}
+    C_Body() : C_Base(Component::Body), m_world(nullptr) {}
+    ~C_Body() {}
 
-	void ReadIn(std::stringstream& l_stream) {
-		l_stream >> m_fixedRotation >> m_type >>m_density 
-            >> m_friction >> m_restitution >> m_size.x >> m_size.y;
-	}
+    void ReadIn(std::stringstream& l_stream) {
+        l_stream >> m_fixedRotation >> m_type >> m_density
+            >> m_friction >> m_restitution >> m_size.x >> m_size.y
+            >> m_moveSpeed;
+    }
 
-	void CreateBody()
-	{
+    void CreateBody()
+    {
         b2BodyDef BodyDef;
         BodyDef.userData.pointer = reinterpret_cast<uintptr_t>(this);
         BodyDef.fixedRotation = m_fixedRotation;
 
-        if(m_type == 1)
+        if (m_type == 1)
             BodyDef.type = b2_staticBody;
         else if (m_type == 2)
             BodyDef.type = b2_dynamicBody;
@@ -41,7 +43,7 @@ public:
         FixtureDef.shape = &box2d_shape;
         FixtureDef.userData.pointer = reinterpret_cast<uintptr_t>(this);
         this->m_body->CreateFixture(&FixtureDef);
-	}
+    }
 
     void SetGlobalWorld(b2World* l_world) { this->m_world = l_world; }
 
@@ -53,15 +55,31 @@ public:
         m_body->SetTransform(b2Vec2(position.x, position.y), m_body->GetAngle());
     }
 
-    const sf::Vector2f GetPosition() {   
+    const sf::Vector2f GetPosition() {
         sf::Vector2f pos;
         pos.x = m_body->GetPosition().x;
         pos.y = m_body->GetPosition().y;
 
-        return pos; }
+        return pos;
+    }
+
+    void Move(const Direction& l_dir)
+    {
+        b2Vec2 vel = m_body->GetLinearVelocity();
+
+        switch (l_dir)
+        {
+        case Direction::Left: vel.x = b2Max(vel.x - 0.1f, -m_moveSpeed); break;
+        case Direction::Right: vel.x = b2Min(vel.x + 0.1f, m_moveSpeed); break;
+        } 
+
+        std::cout << vel.x << std::endl;
+
+        m_body->SetLinearVelocity(vel);
+    }
 
 private:
-	b2Body* m_body;
+    b2Body* m_body;
     b2World* m_world;
     bool m_fixedRotation;
     sf::Vector2f m_position;
@@ -70,5 +88,5 @@ private:
     float m_friction;
     float m_restitution;
     sf::Vector2f m_size;
+    float m_moveSpeed;
 };
-
