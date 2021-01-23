@@ -20,7 +20,14 @@ void S_Renderer::Update(float l_dT){
 	for(auto &entity : m_entities)
 	{
 		C_Position* position = entities->GetComponent<C_Position>(entity, Component::Position);
+		C_Body* body = nullptr;
 		C_Drawable* drawable = nullptr;
+
+		if (entities->HasComponent(entity, Component::Body)) {
+			body = entities->GetComponent<C_Body>(entity, Component::Body);
+			position->SetPosition(body->GetPosition());
+		}
+
 		if (entities->HasComponent(entity, Component::SpriteSheet)){
 			drawable = entities->GetComponent<C_Drawable>(entity, Component::SpriteSheet);
 		} else { continue; }

@@ -44,9 +44,14 @@ void Map::LoadMap(const std::string& l_path){
 			int entityId = m_context->m_entityManager->AddEntity(name);
 			if (entityId < 0){ continue; }
 			if(name == "Player"){ m_playerId = entityId; }
-			C_Base* position = m_context->m_entityManager->
+			C_Position* position = m_context->m_entityManager->
 				GetComponent<C_Position>(entityId,Component::Position);
 			if(position){ keystream >> *position; }
+			C_Body* body = m_context->m_entityManager->
+				GetComponent<C_Body>(entityId, Component::Body);
+			if (body && position) {
+				body->SetPosition(position->GetPosition());
+			}
 		} else {
 			// Something else.
 			std::cout << "! Unknown type \"" << type << "\"." << std::endl;
@@ -60,7 +65,8 @@ void Map::LoadTiles(const std::string& l_path){
 
 }
 
-void Map::Update(float l_dT){}
+void Map::Update(float l_dT){
+}
 
 void Map::Draw(unsigned int l_layer){
 	sf::RenderWindow* l_wind = m_context->m_wind->GetRenderWindow();

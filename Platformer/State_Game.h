@@ -1,4 +1,5 @@
 #pragma once
+#include <BOX2D/box2d.h>
 #include "BaseState.h"
 #include "Map.h"
 #include "EventManager.h"
@@ -27,5 +28,6 @@ private:
 	void UpdateCamera();
 
 	Map* m_gameMap;
+	b2World* m_world;
 	int m_player;
 };

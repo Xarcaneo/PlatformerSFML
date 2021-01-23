@@ -1,6 +1,8 @@
 #pragma once
+#include <BOX2D/box2d.h>
 #include "C_Position.h"
 #include "C_SpriteSheet.h"
+#include "C_Body.h"
 /*#include "C_State.h"
 #include "C_Movable.h"
 #include "C_Controller.h"
@@ -21,7 +23,7 @@ using ComponentFactory = std::unordered_map<Component,std::function<C_Base*(void
 class SystemManager;
 class EntityManager{
 public:
-	EntityManager(SystemManager* l_sysMgr, TextureManager* l_textureMgr);
+	EntityManager(SystemManager* l_sysMgr, TextureManager* l_textureMgr, b2World* l_world);
 	~EntityManager();
 
 	int AddEntity(const Bitmask& l_mask);
@@ -61,4 +63,5 @@ private:
 
 	SystemManager* m_systems;
 	TextureManager* m_textureManager;
+	b2World* m_world;
 };

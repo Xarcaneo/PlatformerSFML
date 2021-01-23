@@ -125,6 +125,8 @@ bool SpriteSheet::LoadSheet(const std::string& l_file){
 			if (m_animationCurrent){ continue; }
 			m_animationCurrent = anim;
 			m_animationCurrent->Play();
+
+			m_sprite.setOrigin(m_spriteSize.x / 2.0f, m_spriteSize.y / 2.0f);
 		}
 	}
 	sheet.close();

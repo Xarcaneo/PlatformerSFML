@@ -1,4 +1,5 @@
 #pragma once
+#include <BOX2D/box2d.h>
 #include "Window.h"
 #include "EventManager.h"
 #include "TextureManager.h"
@@ -15,7 +16,8 @@ struct SharedContext{
 		m_textureManager(nullptr),
 		m_systemManager(nullptr),
 		m_entityManager(nullptr),
-		m_gameMap(nullptr){}
+		m_gameMap(nullptr),
+		m_world(new b2World(b2Vec2(0, 9.81f))){}
 
 	Window* m_wind;
 	EventManager* m_eventManager;
@@ -23,5 +25,6 @@ struct SharedContext{
 	SystemManager* m_systemManager;
 	EntityManager* m_entityManager;
 	Map* m_gameMap;
+	b2World* m_world;
 	DebugOverlay m_debugOverlay;
 };

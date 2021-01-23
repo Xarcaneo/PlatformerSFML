@@ -138,9 +138,6 @@
     <ClInclude Include="DebugOverlay.h">
       <Filter>Framework</Filter>
     </ClInclude>
-    <ClInclude Include="C_SpriteSheet.h">
-      <Filter>Animations</Filter>
-    </ClInclude>
     <ClInclude Include="Anim_Base.h">
       <Filter>Animations</Filter>
     </ClInclude>
@@ -155,6 +152,15 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Body.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Converter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_SpriteSheet.h">
+      <Filter>Entities\EComponents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

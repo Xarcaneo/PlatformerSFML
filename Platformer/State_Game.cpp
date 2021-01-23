@@ -23,6 +23,8 @@ void State_Game::OnCreate(){
 	m_view.zoom(0.6f);
 	m_stateMgr->GetContext()->m_wind->GetRenderWindow()->setView(m_view);
 
+	m_world = m_stateMgr->GetContext()->m_world;
+
 	m_gameMap = new Map(m_stateMgr->GetContext()/*, this*/);
 	m_gameMap->LoadMap("Assets/media/Maps/map1.map");
 
@@ -48,6 +50,7 @@ void State_Game::OnDestroy(){
 
 void State_Game::Update(const sf::Time& l_time){
 	SharedContext* context = m_stateMgr->GetContext();
+	m_world->Step(l_time.asSeconds(), 6, 2);
 	UpdateCamera();
 	m_gameMap->Update(l_time.asSeconds());
 	context->m_systemManager->Update(l_time.asSeconds());

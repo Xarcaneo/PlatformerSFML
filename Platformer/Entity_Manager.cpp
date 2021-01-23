@@ -2,8 +2,8 @@
 #include "System_Manager.h"
 
 EntityManager::EntityManager(SystemManager* l_sysMgr, 
-	TextureManager* l_textureMgr): m_idCounter(0), 
-	m_systems(l_sysMgr), m_textureManager(l_textureMgr)
+	TextureManager* l_textureMgr, b2World* l_world): m_idCounter(0),
+	m_systems(l_sysMgr), m_textureManager(l_textureMgr), m_world(l_world)
 {
 	AddComponentType<C_Position>(Component::Position);
 	AddComponentType<C_SpriteSheet>(Component::SpriteSheet);
@@ -11,6 +11,7 @@ EntityManager::EntityManager(SystemManager* l_sysMgr,
 	AddComponentType<C_Movable>(Component::Movable);
 	AddComponentType<C_Controller>(Component::Controller);
 	AddComponentType<C_Collidable>(Component::Collidable);*/
+	AddComponentType<C_Body>(Component::Body);
 }
 
 EntityManager::~EntityManager(){ Purge(); }
@@ -59,11 +60,18 @@ int EntityManager::AddEntity(const std::string& l_entityFile){
 			unsigned int c_id = 0;
 			keystream >> c_id;
 			C_Base* component = GetComponent<C_Base>(EntityId,(Component)c_id);
-			if (!component){ continue; }
+			if (!component) { continue; }
 			keystream >> *component;
+
 			if(component->GetType() == Component::SpriteSheet){
 				C_SpriteSheet* sheet = (C_SpriteSheet*)component;
 				sheet->Create(m_textureManager);
+			}
+			else if (component->GetType() == Component::Body) {
+				C_Body* body = (C_Body*)component;
+				C_Position* position = GetComponent<C_Position>(EntityId, Component::Position);
+				body->SetGlobalWorld(m_world);
+				body->CreateBody();
 			}
 		}
 	}
@@ -88,7 +96,7 @@ bool EntityManager::AddComponent(const EntityId& l_entity, const Component& l_co
 {
 	auto itr = m_entities.find(l_entity);
 	if (itr == m_entities.end()){ return false; }
-	if (itr->second.first.GetBit((unsigned int)l_component)){ return false; }
+	if (itr->second.first.GetBit((unsigned int)l_component)) { return false; }
 	// Component doesn't exist.
 	auto itr2 = m_cFactory.find(l_component);
 	if (itr2 == m_cFactory.end()){ return false; }
