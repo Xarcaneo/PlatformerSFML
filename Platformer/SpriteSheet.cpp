@@ -33,6 +33,10 @@ void SpriteSheet::SetSpritePosition(const sf::Vector2f& l_pos){
 	m_sprite.setPosition(l_pos);
 }
 
+void SpriteSheet::SetSpriteAngle(const float& angle) {
+	m_sprite.setRotation(angle);
+}
+
 void SpriteSheet::SetDirection(const Direction& l_dir){
 	if (l_dir == m_direction){ return; }
 	m_direction = l_dir;

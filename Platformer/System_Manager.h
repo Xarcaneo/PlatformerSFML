@@ -4,6 +4,7 @@
 #include "S_Renderer.h"
 #include "S_Control.h"
 #include "S_State.h"
+#include "S_SheetAnimation.h"
 #include "Event_Queue.h"
 #include "MessageHandler.h"
 #include <unordered_map>

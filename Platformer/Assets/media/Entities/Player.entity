@@ -1,10 +1,9 @@
 Name Player
-Attributes 87
+Attributes 59
 |Component|ID|Individual attributes|
 Component 0 0 0 1
 Component 1 Player
-Component 2 0
-Component 3 128.0 1024.0 1024.0 1
+Component 2
+Component 3 0
 Component 4
-Component 5 20.0 20.0 0.0 0.0 2
-Component 6 0 2 2 2 2 49 50 500
+Component 5 1 2 1 0 0 32 32 500

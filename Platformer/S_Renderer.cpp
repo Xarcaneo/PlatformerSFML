@@ -6,7 +6,6 @@ S_Renderer::S_Renderer(SystemManager* l_systemMgr)
 {
 	Bitmask req;
 	req.TurnOnBit((unsigned int)Component::Position);
-	req.TurnOnBit((unsigned int)Component::SpriteSheet);
 	m_requiredComponents.push_back(req);
 	req.Clear();
 
@@ -22,16 +21,22 @@ void S_Renderer::Update(float l_dT){
 		C_Position* position = entities->GetComponent<C_Position>(entity, Component::Position);
 		C_Body* body = nullptr;
 		C_Drawable* drawable = nullptr;
+		float angle = 0;
 
 		if (entities->HasComponent(entity, Component::Body)) {
 			body = entities->GetComponent<C_Body>(entity, Component::Body);
 			position->SetPosition(body->GetPosition());
+			angle = body->GetAngle();
 		}
 
 		if (entities->HasComponent(entity, Component::SpriteSheet)){
 			drawable = entities->GetComponent<C_Drawable>(entity, Component::SpriteSheet);
-		} else { continue; }
-		drawable->UpdatePosition(position->GetPosition());
+		} 
+		else if (entities->HasComponent(entity, Component::SingleSprite)){
+			drawable = entities->GetComponent<C_Drawable>(entity, Component::SingleSprite);
+		}
+		else { continue; }
+		drawable->UpdatePosition(position->GetPosition(), angle);
 	}
 }
 
@@ -64,8 +69,13 @@ void S_Renderer::Render(Window* l_wind, unsigned int l_layer)
 		if(position->GetElevation() < l_layer){ continue; }
 		if(position->GetElevation() > l_layer){ break; }
 		C_Drawable* drawable = nullptr;
-		if (!entities->HasComponent(entity, Component::SpriteSheet)){ continue; }
-		drawable = entities->GetComponent<C_Drawable>(entity, Component::SpriteSheet);
+		if (entities->HasComponent(entity, Component::SingleSprite)) {
+			drawable = entities->GetComponent<C_Drawable>(entity, Component::SingleSprite);
+		}
+		else if (entities->HasComponent(entity, Component::SpriteSheet)) {
+			drawable = entities->GetComponent<C_Drawable>(entity, Component::SpriteSheet);
+		}
+		else { continue; }
 		sf::FloatRect drawableBounds;
 		drawableBounds.left = position->GetPosition().x - (drawable->GetSize().x / 2);
 		drawableBounds.top = position->GetPosition().y - drawable->GetSize().y;

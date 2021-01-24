@@ -17,6 +17,7 @@ public:
 	const sf::Vector2f& GetSpritePosition()const;
 	void SetSpriteSize(const sf::Vector2u& l_size);
 	void SetSpritePosition(const sf::Vector2f& l_pos);
+	void SetSpriteAngle(const float& angle);
 
 	void SetDirection(const Direction& l_dir);
 	Direction GetDirection();

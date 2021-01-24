@@ -1,6 +1,7 @@
 #pragma once
 #include "C_Drawable.h"
 #include "SpriteSheet.h"
+#include "Converter.h"
 
 class C_SpriteSheet : public C_Drawable{
 public:
@@ -22,8 +23,9 @@ public:
 
 	SpriteSheet* GetSpriteSheet(){ return m_spriteSheet; }
 
-	void UpdatePosition(const sf::Vector2f& l_vec){
+	void UpdatePosition(const sf::Vector2f& l_vec, const float& angle){
 		m_spriteSheet->SetSpritePosition(l_vec);
+		m_spriteSheet->SetSpriteAngle(converter::radToDeg<double>(angle));
 	}
 
 	const sf::Vector2u& GetSize(){ 

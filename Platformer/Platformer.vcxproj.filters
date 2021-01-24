@@ -46,6 +46,9 @@
     <Filter Include="Animations">
       <UniqueIdentifier>{a81903f7-a207-44e4-922e-aeb71c79210e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{b647b33e-6fdc-4b61-9439-5134597b7f01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State_Paused.h">
@@ -135,9 +138,6 @@
     <ClInclude Include="C_Drawable.h">
       <Filter>Entities\EComponents</Filter>
     </ClInclude>
-    <ClInclude Include="DebugOverlay.h">
-      <Filter>Framework</Filter>
-    </ClInclude>
     <ClInclude Include="Anim_Base.h">
       <Filter>Animations</Filter>
     </ClInclude>
@@ -173,6 +173,15 @@
     </ClInclude>
     <ClInclude Include="C_Body.h">
       <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="S_SheetAnimation.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="C_SingleSprite.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugOverlay.h">
+      <Filter>Debug</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +240,9 @@
       <Filter>Entities\ESystems</Filter>
     </ClCompile>
     <ClCompile Include="S_State.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="S_SheetAnimation.cpp">
       <Filter>Entities\ESystems</Filter>
     </ClCompile>
   </ItemGroup>

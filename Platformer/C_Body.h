@@ -57,10 +57,14 @@ public:
 
     const sf::Vector2f GetPosition() {
         sf::Vector2f pos;
-        pos.x = m_body->GetPosition().x;
-        pos.y = m_body->GetPosition().y;
+        pos.x = converter::metersToPixels(m_body->GetPosition().x);
+        pos.y = converter::metersToPixels(m_body->GetPosition().y);
 
         return pos;
+    }
+
+    const float GetAngle() {
+        return m_body->GetAngle();
     }
 
     void Move(const Direction& l_dir)
@@ -72,8 +76,6 @@ public:
         case Direction::Left: vel.x = b2Max(vel.x - 0.1f, -m_moveSpeed); break;
         case Direction::Right: vel.x = b2Min(vel.x + 0.1f, m_moveSpeed); break;
         } 
-
-        std::cout << vel.x << std::endl;
 
         m_body->SetLinearVelocity(vel);
     }

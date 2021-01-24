@@ -2,6 +2,7 @@
 #include <BOX2D/box2d.h>
 #include "C_Position.h"
 #include "C_SpriteSheet.h"
+#include "C_SingleSprite.h"
 #include "C_Body.h"
 #include "C_State.h"
 //#include "C_Movable.h"

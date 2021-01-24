@@ -1,10 +1,9 @@
 Name Skeleton
-Attributes 67
+Attributes 35
 |Component|ID|Individual attributes|
 Component 0 0 0 0
 Component 1 Skeleton
-Component 2 0
-Component 3 128.0 1024.0 1024.0 1
+Component 2
+Component 3 0
 Component 4
-Component 5 20.0 20.0 0.0 0.0 2
-Component 6 0 1 2 2 2 49 500
+Component 5 0 1 2 2 2 49 500
