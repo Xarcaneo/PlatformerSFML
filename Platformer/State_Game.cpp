@@ -28,8 +28,6 @@ void State_Game::OnCreate(){
 	m_gameMap->LoadMap("Assets/media/Maps/map1.map");
 
 	EntityManager* entities = m_stateMgr->GetContext()->m_entityManager;
-	//m_stateMgr->GetContext()->m_systemManager->GetSystem<S_Collision>(System::Collision)->SetMap(m_gameMap);
-	//m_stateMgr->GetContext()->m_systemManager->GetSystem<S_Movement>(System::Movement)->SetMap(m_gameMap);
 	m_player = m_gameMap->GetPlayerId();
 }
 
@@ -57,10 +55,12 @@ void State_Game::Update(const sf::Time& l_time){
 void State_Game::UpdateCamera(){
 	if (m_player == -1){ return; }
 	SharedContext* context = m_stateMgr->GetContext();
-	C_Position* pos = m_stateMgr->GetContext()->m_entityManager->
-		GetComponent<C_Position>(m_player, Component::Position);
+	C_Body* body = m_stateMgr->GetContext()->m_entityManager->
+		GetComponent<C_Body>(m_player, Component::Body);
 
-	m_view.setCenter(pos->GetPosition());
+	if(body)
+		m_view.setCenter(body->GetPosition());
+
 	context->m_wind->GetRenderWindow()->setView(m_view);
 }
 

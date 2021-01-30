@@ -1,14 +1,11 @@
 SIZE 32 32
 |ENTITY|Name|x|y|elevation|
 ENTITY Player 0.0 0.0 2
-ENTITY Skeleton 90.0 90.0 1
-ENTITY Skeleton 90.0 180.0 1
-ENTITY Ground 0.0 10.0 1
-ENTITY Ground 1.0 10.0 1
-ENTITY Ground 2.0 10.0 1
-ENTITY Ground 3.0 10.0 1
-ENTITY Ground 4.0 10.0 1
-ENTITY Ground 5.0 10.0 1
-ENTITY Ground 6.0 10.0 1
-ENTITY Ground 7.0 9.0 1
-ENTITY Ground 5.0 8.0 1
+ENTITY Ground 0.0 300.0 1
+ENTITY Ground 32.0 300.0 1
+ENTITY Ground 64.0 300.0 1
+ENTITY Ground 96.0 300.0 1
+ENTITY Ground 128.0 300.0 1
+ENTITY Ground 160.0 300.0 1
+ENTITY Ground 192.0 300.0 1
+ENTITY Ground 192.0 268.0 1

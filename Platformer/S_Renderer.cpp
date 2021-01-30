@@ -25,7 +25,6 @@ void S_Renderer::Update(float l_dT){
 
 		if (entities->HasComponent(entity, Component::Body)) {
 			body = entities->GetComponent<C_Body>(entity, Component::Body);
-			position->SetPosition(body->GetPosition());
 			angle = body->GetAngle();
 		}
 
@@ -36,7 +35,11 @@ void S_Renderer::Update(float l_dT){
 			drawable = entities->GetComponent<C_Drawable>(entity, Component::SingleSprite);
 		}
 		else { continue; }
-		drawable->UpdatePosition(position->GetPosition(), angle);
+
+		if(body)
+			drawable->UpdatePosition(body->GetPosition(), angle);
+		else
+			drawable->UpdatePosition(position->GetPosition(), angle);
 	}
 }
 
@@ -64,10 +67,23 @@ void S_Renderer::Notify(const Message& l_message){
 void S_Renderer::Render(Window* l_wind, unsigned int l_layer)
 {
 	EntityManager* entities = m_systemManager->GetEntityManager();
+	sf::Vector2f pos;
+
 	for(auto &entity : m_entities){
 		C_Position* position = entities->GetComponent<C_Position>(entity, Component::Position);
 		if(position->GetElevation() < l_layer){ continue; }
 		if(position->GetElevation() > l_layer){ break; }
+		C_Body* body = entities->GetComponent<C_Body>(entity, Component::Body);
+		if (body)
+		{
+			pos.x = body->GetPosition().x;
+			pos.y = body->GetPosition().y;
+		}
+		else if(position)
+		{
+			pos.x = position->GetPosition().x;
+			pos.y = position->GetPosition().y;
+		}
 		C_Drawable* drawable = nullptr;
 		if (entities->HasComponent(entity, Component::SingleSprite)) {
 			drawable = entities->GetComponent<C_Drawable>(entity, Component::SingleSprite);
@@ -77,8 +93,8 @@ void S_Renderer::Render(Window* l_wind, unsigned int l_layer)
 		}
 		else { continue; }
 		sf::FloatRect drawableBounds;
-		drawableBounds.left = position->GetPosition().x - (drawable->GetSize().x / 2);
-		drawableBounds.top = position->GetPosition().y - drawable->GetSize().y;
+		drawableBounds.left = pos.x - (drawable->GetSize().x / 2);
+		drawableBounds.top = pos.y - drawable->GetSize().y;
 		drawableBounds.width = drawable->GetSize().x;
 		drawableBounds.height = drawable->GetSize().y;
 		if (!l_wind->GetViewSpace().intersects(drawableBounds)){ continue; }

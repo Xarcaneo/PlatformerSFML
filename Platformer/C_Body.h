@@ -52,7 +52,7 @@ public:
         this->m_position.x = converter::pixelsToMeters(position.x);
         this->m_position.y = converter::pixelsToMeters(position.y);
 
-        m_body->SetTransform(b2Vec2(position.x, position.y), m_body->GetAngle());
+        m_body->SetTransform(b2Vec2(m_position.x, m_position.y), m_body->GetAngle());
     }
 
     const sf::Vector2f GetPosition() {
