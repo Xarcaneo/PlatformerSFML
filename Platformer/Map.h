@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <json/json.h>
 #include <unordered_map>
 #include <map>
 #include <fstream>
@@ -14,8 +15,6 @@ public:
 	~Map();
 
 	unsigned int GetTileSize()const;
-	const sf::Vector2u& GetMapSize()const;
-	const sf::Vector2f& GetPlayerStart()const;
 	int GetPlayerId()const;
 
 	void LoadMap(const std::string& l_path);
@@ -26,15 +25,9 @@ private:
 	// Method for converting 2D coordinates to 1D ints.
 	unsigned int ConvertCoords(unsigned int l_x, unsigned int l_y, unsigned int l_layer)const;
 
-	void LoadTiles(const std::string& l_path);
-
 	void PurgeMap();
 	void PurgeTileSet();
 
-	sf::Vector2u m_maxMapSize;
-	sf::Vector2f m_playerStart;
 	int m_playerId;
-	unsigned int m_tileCount;
-	unsigned int m_tileSetCount;
 	SharedContext* m_context;
 };

@@ -49,6 +49,9 @@
     <Filter Include="Debug">
       <UniqueIdentifier>{b647b33e-6fdc-4b61-9439-5134597b7f01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="JSON">
+      <UniqueIdentifier>{765f6aa0-f450-41a1-a2c2-9035e8005ab5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State_Paused.h">
@@ -183,6 +186,12 @@
     <ClInclude Include="DebugOverlay.h">
       <Filter>Debug</Filter>
     </ClInclude>
+    <ClInclude Include="..\External libraries\JSON\dist\json\json.h">
+      <Filter>JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External libraries\JSON\dist\json\json-forwards.h">
+      <Filter>JSON</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -244,6 +253,9 @@
     </ClCompile>
     <ClCompile Include="S_SheetAnimation.cpp">
       <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External libraries\JSON\dist\jsoncpp.cpp">
+      <Filter>JSON</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

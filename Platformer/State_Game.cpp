@@ -25,7 +25,7 @@ void State_Game::OnCreate(){
 	m_world = m_stateMgr->GetContext()->m_world;
 
 	m_gameMap = new Map(m_stateMgr->GetContext()/*, this*/);
-	m_gameMap->LoadMap("Assets/media/Maps/map1.map");
+	m_gameMap->LoadMap("Assets/media/Maps/map1.json");
 
 	EntityManager* entities = m_stateMgr->GetContext()->m_entityManager;
 	m_player = m_gameMap->GetPlayerId();

@@ -1,0 +1,49 @@
+{
+    "ENTITY": [
+        {
+            "Name": "Player",
+            "Position": [ 0, 0 ],
+            "Elevation": 2
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 0, 300 ],
+            "Elevation": 1
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 32, 300 ],
+            "Elevation": 1
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 64, 300 ],
+            "Elevation": 1
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 96, 300 ],
+            "Elevation": 1
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 128, 300 ],
+            "Elevation": 1
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 160, 300 ],
+            "Elevation": 1
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 192, 300 ],
+            "Elevation": 1
+        },
+        {
+            "Name": "Ground",
+            "Position": [ 192, 268 ],
+            "Elevation": 1
+        }
+    ]
+}

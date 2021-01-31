@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\External libraries\JSON\dist\json\json-forwards.h" />
+    <ClInclude Include="..\External libraries\JSON\dist\json\json.h" />
     <ClInclude Include="Anim_Base.h" />
     <ClInclude Include="Anim_Directional.h" />
     <ClInclude Include="BaseState.h" />
@@ -197,6 +199,7 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\External libraries\JSON\dist\jsoncpp.cpp" />
     <ClCompile Include="Anim_Base.cpp" />
     <ClCompile Include="Anim_Directional.cpp" />
     <ClCompile Include="Entity_Manager.cpp" />
