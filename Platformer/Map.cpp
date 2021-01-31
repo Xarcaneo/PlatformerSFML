@@ -33,6 +33,7 @@ void Map::LoadMap(const std::string& l_path){
 	{
 		std::cout << "--- Loading a map: " << l_path << std::endl;
 
+		//Entities
 		for (int i = 0; i < root["ENTITY"].size(); i++)
 		{
 			// Set up entity here.
@@ -44,10 +45,10 @@ void Map::LoadMap(const std::string& l_path){
 			pos = { root["ENTITY"][i]["Position"][0].asFloat(), root["ENTITY"][i]["Position"][1].asFloat() };
 			elevation = root["ENTITY"][i]["Elevation"].asUInt();
 
-			if (name == "Player" && m_playerId != -1) { continue; }
+			if (name == "NPC/Player" && m_playerId != -1) { continue; }
 			int entityId = m_context->m_entityManager->AddEntity(name);
 			if (entityId < 0) { continue; }
-			if (name == "Player") { m_playerId = entityId; }
+			if (name == "NPC/Player") { m_playerId = entityId; }
 			C_Position* position = m_context->m_entityManager->
 				GetComponent<C_Position>(entityId, Component::Position);
 			if (position) {
@@ -58,6 +59,36 @@ void Map::LoadMap(const std::string& l_path){
 			if (body && position) {
 				body->SetPosition(position->GetPosition());
 			}
+		}
+
+		//Collision boxes
+		for (int i = 0; i < root["COLLISION"].size(); i++)
+		{
+			sf::Vector2f pos, size;
+			pos = { root["COLLISION"][i]["Position"][0].asFloat(), root["COLLISION"][i]["Position"][1].asFloat() };
+			size = { root["COLLISION"][i]["Size"][0].asFloat(), root["COLLISION"][i]["Size"][1].asFloat() };
+
+			b2BodyDef BodyDef;
+			BodyDef.fixedRotation = true;
+			BodyDef.type = b2_staticBody;
+			BodyDef.position = b2Vec2(converter::pixelsToMeters<float>(pos.x),
+				converter::pixelsToMeters<float>(pos.y));
+
+			b2Body* collisionBox;
+			collisionBox = m_context->m_world->CreateBody(&BodyDef);
+	
+			b2PolygonShape box2d_shape;
+			box2d_shape.SetAsBox(converter::pixelsToMeters<double>(size.x / 2.0),
+				converter::pixelsToMeters<double>(size.y / 2.0));
+			b2FixtureDef FixtureDef;
+			//FixtureDef.density = m_density;
+			//FixtureDef.friction = m_friction;
+			//FixtureDef.restitution = m_restitution;
+			FixtureDef.shape = &box2d_shape;
+			collisionBox->CreateFixture(&FixtureDef);
+
+			pos.x = converter::metersToPixels(collisionBox->GetPosition().x);
+			pos.y = converter::metersToPixels(collisionBox->GetPosition().y);
 		}
 	}
 

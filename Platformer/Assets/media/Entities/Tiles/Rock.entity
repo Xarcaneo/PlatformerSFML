@@ -1,0 +1,9 @@
+Name Ground
+Attributes 37
+|Component|ID|Individual attributes|
+Component 0 0 0 1
+Component 1 
+Component 2 TileSheet 32 32 64 0
+Component 3 
+Component 4
+Component 5 0 2 1 0 0 32 32 500

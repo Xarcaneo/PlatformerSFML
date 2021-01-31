@@ -1,49 +1,61 @@
 {
     "ENTITY": [
         {
-            "Name": "Player",
+            "Name": "NPC/Player",
             "Position": [ 0, 0 ],
             "Elevation": 2
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 0, 300 ],
             "Elevation": 1
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 32, 300 ],
             "Elevation": 1
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 64, 300 ],
             "Elevation": 1
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 96, 300 ],
             "Elevation": 1
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 128, 300 ],
             "Elevation": 1
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 160, 300 ],
             "Elevation": 1
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 192, 300 ],
             "Elevation": 1
         },
         {
-            "Name": "Ground",
+            "Name": "Tiles/Ground",
             "Position": [ 192, 268 ],
             "Elevation": 1
+        },
+        {
+            "Name": "Tiles/Rock",
+            "Position": [ 32, 0 ],
+            "Elevation": 1
+        }
+    ],
+
+    "COLLISION": [
+        {
+            "Position": [ 78, 300 ],
+            "Size": [ 226 , 32 ]
         }
     ]
 }

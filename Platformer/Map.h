@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <BOX2D/box2d.h>
 #include <json/json.h>
 #include <unordered_map>
 #include <map>
