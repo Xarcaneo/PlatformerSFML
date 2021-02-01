@@ -192,6 +192,7 @@
     <ClInclude Include="System_Manager.h" />
     <ClInclude Include="S_Base.h" />
     <ClInclude Include="S_Control.h" />
+    <ClInclude Include="S_Movement.h" />
     <ClInclude Include="S_Renderer.h" />
     <ClInclude Include="S_SheetAnimation.h" />
     <ClInclude Include="S_State.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="..\External libraries\JSON\dist\jsoncpp.cpp" />
     <ClCompile Include="Anim_Base.cpp" />
     <ClCompile Include="Anim_Directional.cpp" />
+    <ClCompile Include="C_Movable.h" />
     <ClCompile Include="Entity_Manager.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -216,6 +218,7 @@
     <ClCompile Include="System_Manager.cpp" />
     <ClCompile Include="S_Base.cpp" />
     <ClCompile Include="S_Control.cpp" />
+    <ClCompile Include="S_Movement.cpp" />
     <ClCompile Include="S_Renderer.cpp" />
     <ClCompile Include="S_SheetAnimation.cpp" />
     <ClCompile Include="S_State.cpp" />

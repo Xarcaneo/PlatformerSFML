@@ -47,9 +47,7 @@ void S_State::Notify(const Message& l_message){
 
 			if (state->GetState() == EntityState::Dying){ return; }
 			EntityEvent e;
-			if (l_message.m_int == (int)Direction::Up){
-				e = EntityEvent::Moving_Up;
-			} else if(l_message.m_int == (int)Direction::Left){
+		    if(l_message.m_int == (int)Direction::Left){
 				e = EntityEvent::Moving_Left;
 			} else if (l_message.m_int == (int)Direction::Right){
 				e = EntityEvent::Moving_Right;

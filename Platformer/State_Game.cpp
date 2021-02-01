@@ -14,7 +14,7 @@ void State_Game::OnCreate(){
 	evMgr->AddCallback(StateType::Game, "Key_O", &State_Game::ToggleOverlay, this);
 	evMgr->AddCallback(StateType::Game, "Player_MoveLeft", &State_Game::PlayerMove, this);
 	evMgr->AddCallback(StateType::Game, "Player_MoveRight", &State_Game::PlayerMove, this);
-	evMgr->AddCallback(StateType::Game, "Player_MoveUp", &State_Game::PlayerMove, this);
+	//evMgr->AddCallback(StateType::Game, "Player_MoveUp", &State_Game::PlayerMove, this);
 
 	sf::Vector2u size = m_stateMgr->GetContext()->m_wind->GetWindowSize();
 	m_view.setSize(size.x,size.y);
@@ -90,8 +90,6 @@ void State_Game::PlayerMove(EventDetails* l_details){
 		msg.m_int = (int)Direction::Left;
 	} else if (l_details->m_name == "Player_MoveRight"){
 		msg.m_int = (int)Direction::Right;
-	} else if (l_details->m_name == "Player_MoveUp"){
-		msg.m_int = (int)Direction::Up;
 	}
 	msg.m_receiver = m_player;
 	m_stateMgr->GetContext()->m_systemManager->GetMessageHandler()->Dispatch(msg);

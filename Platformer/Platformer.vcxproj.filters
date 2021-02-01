@@ -192,6 +192,9 @@
     <ClInclude Include="..\External libraries\JSON\dist\json\json-forwards.h">
       <Filter>JSON</Filter>
     </ClInclude>
+    <ClInclude Include="S_Movement.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -256,6 +259,12 @@
     </ClCompile>
     <ClCompile Include="..\External libraries\JSON\dist\jsoncpp.cpp">
       <Filter>JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="C_Movable.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Movement.cpp">
+      <Filter>Entities\ESystems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

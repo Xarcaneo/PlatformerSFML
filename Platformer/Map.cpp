@@ -81,9 +81,9 @@ void Map::LoadMap(const std::string& l_path){
 			box2d_shape.SetAsBox(converter::pixelsToMeters<double>(size.x / 2.0),
 				converter::pixelsToMeters<double>(size.y / 2.0));
 			b2FixtureDef FixtureDef;
-			//FixtureDef.density = m_density;
-			//FixtureDef.friction = m_friction;
-			//FixtureDef.restitution = m_restitution;
+			FixtureDef.density = 0;
+			FixtureDef.friction = 4;
+			FixtureDef.restitution = 0;
 			FixtureDef.shape = &box2d_shape;
 			collisionBox->CreateFixture(&FixtureDef);
 

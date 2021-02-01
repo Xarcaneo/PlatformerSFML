@@ -5,7 +5,7 @@
 #include "C_SingleSprite.h"
 #include "C_Body.h"
 #include "C_State.h"
-//#include "C_Movable.h"
+#include "C_Movable.h"
 #include "C_Controller.h"
 //#include "C_Collidable.h"
 #include "Bitmask.h"

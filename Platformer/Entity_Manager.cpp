@@ -11,6 +11,7 @@ EntityManager::EntityManager(SystemManager* l_sysMgr,
 	AddComponentType<C_State>(Component::State);
 	AddComponentType<C_Controller>(Component::Controller);
 	AddComponentType<C_Body>(Component::Body);
+	AddComponentType<C_Movable>(Component::Movable);
 }
 
 EntityManager::~EntityManager(){ Purge(); }

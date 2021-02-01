@@ -63,6 +63,11 @@ public:
         return pos;
     }
 
+    const b2Vec2 GetVelocity()
+    {
+       return this->m_body->GetLinearVelocity();
+    }
+
     const float GetAngle() {
         return m_body->GetAngle();
     }

@@ -2,7 +2,7 @@
 
 SpriteSheet::SpriteSheet(TextureManager* l_textMgr) 
 	:m_textureManager(l_textMgr), m_animationCurrent(nullptr),
-	m_spriteScale(1.f, 1.f), m_direction(Direction::Down){}
+	m_spriteScale(1.f, 1.f), m_direction(Direction::Right){}
 
 SpriteSheet::~SpriteSheet(){ ReleaseSheet(); }
 
