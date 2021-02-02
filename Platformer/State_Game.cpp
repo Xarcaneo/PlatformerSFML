@@ -14,7 +14,7 @@ void State_Game::OnCreate(){
 	evMgr->AddCallback(StateType::Game, "Key_O", &State_Game::ToggleOverlay, this);
 	evMgr->AddCallback(StateType::Game, "Player_MoveLeft", &State_Game::PlayerMove, this);
 	evMgr->AddCallback(StateType::Game, "Player_MoveRight", &State_Game::PlayerMove, this);
-	//evMgr->AddCallback(StateType::Game, "Player_MoveUp", &State_Game::PlayerMove, this);
+	evMgr->AddCallback(StateType::Game, "Player_Jump", &State_Game::PlayerJump, this);
 
 	sf::Vector2u size = m_stateMgr->GetContext()->m_wind->GetWindowSize();
 	m_view.setSize(size.x,size.y);
@@ -23,8 +23,9 @@ void State_Game::OnCreate(){
 	m_stateMgr->GetContext()->m_wind->GetRenderWindow()->setView(m_view);
 
 	m_world = m_stateMgr->GetContext()->m_world;
+	m_world->SetContactListener(new MyContactListener);
 
-	m_gameMap = new Map(m_stateMgr->GetContext()/*, this*/);
+	m_gameMap = new Map(m_stateMgr->GetContext(), this);
 	m_gameMap->LoadMap("Assets/media/Maps/map1.json");
 
 	EntityManager* entities = m_stateMgr->GetContext()->m_entityManager;
@@ -65,8 +66,8 @@ void State_Game::UpdateCamera(){
 }
 
 void State_Game::Draw(){
+	m_gameMap->Draw();
 	for(unsigned int i = 0; i < Sheet::Num_Layers; ++i){
-		m_gameMap->Draw(i);
 		m_stateMgr->GetContext()->m_systemManager->Draw(
 			m_stateMgr->GetContext()->m_wind, i);
 	}
@@ -91,6 +92,14 @@ void State_Game::PlayerMove(EventDetails* l_details){
 	} else if (l_details->m_name == "Player_MoveRight"){
 		msg.m_int = (int)Direction::Right;
 	}
+
+	msg.m_receiver = m_player;
+	m_stateMgr->GetContext()->m_systemManager->GetMessageHandler()->Dispatch(msg);
+}
+
+void State_Game::PlayerJump(EventDetails* l_details)
+{
+	Message msg((MessageType)EntityMessage::Jumped);
 	msg.m_receiver = m_player;
 	m_stateMgr->GetContext()->m_systemManager->GetMessageHandler()->Dispatch(msg);
 }

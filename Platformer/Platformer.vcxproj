@@ -179,6 +179,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="MessageHandler.h" />
+    <ClInclude Include="MyContactListener.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SharedContext.h" />

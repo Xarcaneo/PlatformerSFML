@@ -11,4 +11,5 @@ public:
 	void Notify(const Message& l_message);
 private:
 	void MoveEntity(const EntityId& l_entity, const Direction& l_dir);
+	void EntityJump(const EntityId& l_entity);
 };

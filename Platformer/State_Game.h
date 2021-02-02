@@ -3,6 +3,7 @@
 #include "BaseState.h"
 #include "Map.h"
 #include "EventManager.h"
+#include "MyContactListener.h"
 
 class State_Game : public BaseState{
 public:
@@ -21,6 +22,7 @@ public:
 	void MainMenu(EventDetails* l_details);
 	void Pause(EventDetails* l_details);
 	void PlayerMove(EventDetails* l_details);
+	void PlayerJump(EventDetails* l_details);
 
 	// Debug:
 	void ToggleOverlay(EventDetails* l_details);

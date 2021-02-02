@@ -1,8 +1,8 @@
 #include "Map.h"
 #include "StateManager.h"
 
-Map::Map(SharedContext* l_context)
-	:m_context(l_context), m_playerId(-1)
+Map::Map(SharedContext* l_context, BaseState* l_currentState)
+	:m_context(l_context), m_playerId(-1), m_currentState(l_currentState)
 {
 	m_context->m_gameMap = this;
 }
@@ -32,6 +32,21 @@ void Map::LoadMap(const std::string& l_path){
 	else
 	{
 		std::cout << "--- Loading a map: " << l_path << std::endl;
+
+		std::string backgroundKey = "";
+		backgroundKey = root["Config"][0]["Background"].asString();
+
+		if (!m_context->m_textureManager->RequireResource(backgroundKey))
+			backgroundKey = "";
+
+		sf::Texture* texture = m_context->m_textureManager->GetResource(backgroundKey);
+		m_background.setTexture(*texture);
+		sf::Vector2f viewSize = m_currentState->GetView().getSize();
+		sf::Vector2u textureSize = texture->getSize();
+		sf::Vector2f scaleFactors;
+		scaleFactors.x = viewSize.x / textureSize.x;
+		scaleFactors.y = viewSize.y / textureSize.y;
+		m_background.setScale(scaleFactors);
 
 		//Entities
 		for (int i = 0; i < root["ENTITY"].size(); i++)
@@ -73,6 +88,7 @@ void Map::LoadMap(const std::string& l_path){
 			BodyDef.type = b2_staticBody;
 			BodyDef.position = b2Vec2(converter::pixelsToMeters<float>(pos.x),
 				converter::pixelsToMeters<float>(pos.y));
+			BodyDef.userData.pointer = reinterpret_cast<uintptr_t>(this);
 
 			b2Body* collisionBox;
 			collisionBox = m_context->m_world->CreateBody(&BodyDef);
@@ -85,6 +101,7 @@ void Map::LoadMap(const std::string& l_path){
 			FixtureDef.friction = 4;
 			FixtureDef.restitution = 0;
 			FixtureDef.shape = &box2d_shape;
+			FixtureDef.userData.pointer = reinterpret_cast<uintptr_t>(this);
 			collisionBox->CreateFixture(&FixtureDef);
 
 			pos.x = converter::metersToPixels(collisionBox->GetPosition().x);
@@ -97,11 +114,14 @@ void Map::LoadMap(const std::string& l_path){
 }
 
 void Map::Update(float l_dT){
+	sf::FloatRect viewSpace = m_context->m_wind->GetViewSpace();
+	m_background.setPosition(viewSpace.left, viewSpace.top);
 }
 
-void Map::Draw(unsigned int l_layer){
+void Map::Draw(){
 	sf::RenderWindow* l_wind = m_context->m_wind->GetRenderWindow();
 	sf::FloatRect viewSpace = m_context->m_wind->GetViewSpace();
+	l_wind->draw(m_background);
 }
 
 void Map::PurgeMap(){

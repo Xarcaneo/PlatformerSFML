@@ -8,7 +8,7 @@ S_Movement::S_Movement(SystemManager* l_systemMgr)
 	Bitmask req;
 	req.TurnOnBit((unsigned int)Component::Position);
 	req.TurnOnBit((unsigned int)Component::Movable);
-	req.TurnOnBit((unsigned int)Component::Body);
+
 	m_requiredComponents.push_back(req);
 	req.Clear();
 
@@ -21,7 +21,7 @@ void S_Movement::Update(float l_dT) {}
 
 void S_Movement::HandleEvent(const EntityId& l_entity,
 	const EntityEvent& l_event)
-{
+{ 
 	switch (l_event) {
 	case EntityEvent::Moving_Left: SetDirection(l_entity, Direction::Left); break;
 	case EntityEvent::Moving_Right: SetDirection(l_entity, Direction::Right); break;
@@ -35,7 +35,11 @@ void S_Movement::Notify(const Message& l_message) {
 	if (!HasEntity(l_message.m_receiver)) { return; }
 	C_Body* body = eMgr->GetComponent<C_Body>
 		(l_message.m_receiver, Component::Body);
-	if (body->GetVelocity().x != 0.0f) { return; }
+
+	C_State* state = eMgr->GetComponent<C_State>
+		(l_message.m_receiver, Component::State);
+
+	if (body->GetVelocity().x == 0.0f && body->GetVelocity().y == 0.0f)
 		m_systemManager->AddEvent(l_message.m_receiver, (EventID)EntityEvent::Became_Idle);
 }
 

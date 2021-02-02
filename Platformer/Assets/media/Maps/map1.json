@@ -1,8 +1,19 @@
 {
+    "Config": [
+        {
+            "Background": "Bg2"
+        }
+    ],
+
     "ENTITY": [
         {
             "Name": "NPC/Player",
             "Position": [ 0, 0 ],
+            "Elevation": 2
+        },
+        {
+            "Name": "NPC/Skeleton",
+            "Position": [ 50, 0 ],
             "Elevation": 2
         },
         {
@@ -55,7 +66,7 @@
     "COLLISION": [
         {
             "Position": [ 78, 300 ],
-            "Size": [ 226 , 32 ]
+            "Size": [ 226, 32 ]
         }
     ]
 }

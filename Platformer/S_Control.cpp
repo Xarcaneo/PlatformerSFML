@@ -21,7 +21,7 @@ void S_Control::HandleEvent(const EntityId& l_entity,
 	switch(l_event){
 	case EntityEvent::Moving_Left: MoveEntity(l_entity, Direction::Left); break;
 	case EntityEvent::Moving_Right: MoveEntity(l_entity, Direction::Right); break;
-	//case EntityEvent::Moving_Up: MoveEntity(l_entity, Direction::Up); break;
+	case EntityEvent::Jumping: EntityJump(l_entity); break;
 	}
 }
 
@@ -32,4 +32,9 @@ void S_Control::MoveEntity(const EntityId& l_entity,
 {
 	C_Body* body = m_systemManager->GetEntityManager()->GetComponent<C_Body>(l_entity, Component::Body);;
 	body->Move(l_dir);
-} 
+}
+void S_Control::EntityJump(const EntityId& l_entity)
+{
+	C_Body* body = m_systemManager->GetEntityManager()->GetComponent<C_Body>(l_entity, Component::Body);;
+	body->Jump();
+}

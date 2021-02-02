@@ -9,6 +9,7 @@ S_State::S_State(SystemManager* l_systemMgr)
 	m_requiredComponents.push_back(req);
 
 	m_systemManager->GetMessageHandler()->Subscribe(EntityMessage::Move,this);
+	m_systemManager->GetMessageHandler()->Subscribe(EntityMessage::Jumped, this);
 	m_systemManager->GetMessageHandler()->Subscribe(EntityMessage::Switch_State,this);
 }
 
@@ -39,6 +40,7 @@ void S_State::HandleEvent(const EntityId& l_entity,
 void S_State::Notify(const Message& l_message){
 	if (!HasEntity(l_message.m_receiver)){ return; }
 	EntityMessage m = (EntityMessage)l_message.m_type;
+
 	switch(m){
 	case EntityMessage::Move:
 		{
@@ -60,6 +62,16 @@ void S_State::Notify(const Message& l_message){
 	case EntityMessage::Switch_State: 
 		ChangeState(l_message.m_receiver,
 			(EntityState)l_message.m_int,false);
+		break;
+
+	case EntityMessage::Jumped:
+		C_State* state = m_systemManager->GetEntityManager()->
+			GetComponent<C_State>(l_message.m_receiver, Component::State);
+
+		if (state->GetState() != EntityState::Dying && state->GetState() != EntityState::Jumping) {
+			m_systemManager->AddEvent(l_message.m_receiver, (EventID)EntityEvent::Jumping);
+			ChangeState(l_message.m_receiver, EntityState::Jumping, false);
+		}
 		break;
 	}
 }

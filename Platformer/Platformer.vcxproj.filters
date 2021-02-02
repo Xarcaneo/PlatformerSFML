@@ -52,6 +52,9 @@
     <Filter Include="JSON">
       <UniqueIdentifier>{765f6aa0-f450-41a1-a2c2-9035e8005ab5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{bb2b9e02-2946-4cac-992b-a5516c058f9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State_Paused.h">
@@ -194,6 +197,9 @@
     </ClInclude>
     <ClInclude Include="S_Movement.h">
       <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="MyContactListener.h">
+      <Filter>Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
