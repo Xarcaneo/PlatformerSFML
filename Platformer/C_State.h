@@ -7,7 +7,7 @@ class C_State : public C_Base{
 public:
 	C_State(): C_Base(Component::State){}
 	void ReadIn(std::stringstream& l_stream){
-		unsigned int state = 0;
+		unsigned int state = 0 ;
 		l_stream >> state;
 		m_state = (EntityState)state;
 	}

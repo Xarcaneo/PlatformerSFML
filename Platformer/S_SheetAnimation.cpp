@@ -24,6 +24,18 @@ void S_SheetAnimation::Update(float l_dT){
 
 		sheet->GetSpriteSheet()->Update(l_dT);
 
+		if (body->GetNumContacts() == 0)
+		{
+			state->SetState(EntityState::Jumping);
+			sheet->GetSpriteSheet()->SetAnimation("Jump", true, false);
+		}
+
+		if (body->GetVelocity().x == 0.0f && body->GetVelocity().y == 0.0f)
+		{
+			state->SetState(EntityState::Idle);
+			sheet->GetSpriteSheet()->SetAnimation("Idle", true, true);
+		}
+
 		const std::string& animName = sheet->GetSpriteSheet()->GetCurrentAnim()->GetName();
 		if (animName == "Jump") {
 			if (!sheet->GetSpriteSheet()->GetCurrentAnim()->IsPlaying())

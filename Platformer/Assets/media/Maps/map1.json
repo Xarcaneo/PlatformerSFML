@@ -8,12 +8,12 @@
     "ENTITY": [
         {
             "Name": "NPC/Player",
-            "Position": [ 0, 0 ],
+            "Position": [ -10, 268 ],
             "Elevation": 2
         },
         {
             "Name": "NPC/Skeleton",
-            "Position": [ 50, 0 ],
+            "Position": [ 150, 0 ],
             "Elevation": 2
         },
         {

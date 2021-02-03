@@ -32,6 +32,7 @@ void S_State::HandleEvent(const EntityId& l_entity,
 {
 	switch(l_event){
 	case EntityEvent::Became_Idle:
+
 		ChangeState(l_entity,EntityState::Idle,false);
 		break;
 	}

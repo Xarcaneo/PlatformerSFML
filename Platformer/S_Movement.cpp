@@ -9,6 +9,7 @@ S_Movement::S_Movement(SystemManager* l_systemMgr)
 	req.TurnOnBit((unsigned int)Component::Position);
 	req.TurnOnBit((unsigned int)Component::Movable);
 
+
 	m_requiredComponents.push_back(req);
 	req.Clear();
 
@@ -29,18 +30,6 @@ void S_Movement::HandleEvent(const EntityId& l_entity,
 }
 
 void S_Movement::Notify(const Message& l_message) {
-	EntityManager* eMgr = m_systemManager->GetEntityManager();
-	EntityMessage m = (EntityMessage)l_message.m_type;
-
-	if (!HasEntity(l_message.m_receiver)) { return; }
-	C_Body* body = eMgr->GetComponent<C_Body>
-		(l_message.m_receiver, Component::Body);
-
-	C_State* state = eMgr->GetComponent<C_State>
-		(l_message.m_receiver, Component::State);
-
-	if (body->GetVelocity().x == 0.0f && body->GetVelocity().y == 0.0f)
-		m_systemManager->AddEvent(l_message.m_receiver, (EventID)EntityEvent::Became_Idle);
 }
 
 void S_Movement::SetDirection(const EntityId& l_entity,
