@@ -30,7 +30,7 @@ void S_SheetAnimation::Update(float l_dT){
 			sheet->GetSpriteSheet()->SetAnimation("Jump", true, false);
 		}
 
-		if (body->GetVelocity().x == 0.0f && body->GetVelocity().y == 0.0f)
+		if (body->GetVelocity().x == 0.0f && body->GetVelocity().y == 0.0f )
 		{
 			state->SetState(EntityState::Idle);
 			sheet->GetSpriteSheet()->SetAnimation("Idle", true, true);

@@ -5,6 +5,8 @@
 #include "Converter.h"
 #include "Directions.h"
 
+enum Controller { Stop, Move_Left, Move_Right };
+
 class C_Body : public C_Base {
 public:
     C_Body() : C_Base(Component::Body), m_world(nullptr) {}
@@ -32,7 +34,8 @@ public:
         this->m_body = m_world->CreateBody(&BodyDef);
         this->m_body->SetLinearDamping(1);
         this->m_body->SetGravityScale(2.0f);
-
+        this->m_body->SetAwake(false);
+         
         b2PolygonShape box2d_shape;
         box2d_shape.SetAsBox(converter::pixelsToMeters<double>(m_size.x / 2.0),
             converter::pixelsToMeters<double>(m_size.y / 2.0));
@@ -41,7 +44,6 @@ public:
         FixtureDef.friction = m_friction;
         FixtureDef.restitution = m_restitution;
         FixtureDef.shape = &box2d_shape;
-        FixtureDef.userData.pointer = reinterpret_cast<uintptr_t>(this);
         this->m_body->CreateFixture(&FixtureDef);
 
         //Foot Sensor
@@ -55,6 +57,7 @@ public:
 
         FixtureDef.shape = &box2d_shape;
         FixtureDef.isSensor = true;
+        FixtureDef.userData.pointer = 3;
         b2Fixture* footSensorFixture = m_body->CreateFixture(&FixtureDef);
         m_footSensor = footSensorFixture;
     }
@@ -86,18 +89,21 @@ public:
         return m_body->GetAngle();
     }
 
-    void Move(const Direction& l_dir)
+    void Move()
     {
         b2Vec2 vel = m_body->GetLinearVelocity();
-        float force = 0;
 
-        switch (l_dir)
+        float desiredVel = 0;
+        switch (m_controller)
         {
-        case Direction::Left: if (vel.x > -m_moveSpeed) force = -50; break;
-        case  Direction::Right: if (vel.x < m_moveSpeed) force = 50;; break;
+        case Controller::Move_Left:  desiredVel = -5; break; 
+        case Controller::Stop:  desiredVel = 0; break;
+        case Controller::Move_Right: desiredVel = 5; break;
         }
 
-        m_body->ApplyForce(b2Vec2(force, 0), m_body->GetWorldCenter(), true);
+        float velChange = desiredVel - vel.x;
+        float impulse = m_body->GetMass() * velChange; //disregard time factor
+        m_body->ApplyLinearImpulse(b2Vec2(impulse, 0), m_body->GetWorldCenter(), true);
     }
 
     void Jump()
@@ -110,6 +116,10 @@ public:
     void EndContact() { m_numContacts--; }
     const int GetNumContacts() { return m_numContacts; }
 
+    void SetController(Controller l_controller) { this->m_controller = l_controller; }
+    const Controller GetController() { return m_controller; }
+
+    void SetAwake(bool l_awake) { this->m_body->SetAwake(l_awake); };
 private:
     b2Body* m_body;
     b2Fixture* m_footSensor;
@@ -123,4 +133,5 @@ private:
     sf::Vector2f m_size;
     float m_moveSpeed;
     int m_numContacts;
+    Controller m_controller;
 };

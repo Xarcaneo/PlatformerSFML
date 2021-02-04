@@ -8,7 +8,7 @@ S_Movement::S_Movement(SystemManager* l_systemMgr)
 	Bitmask req;
 	req.TurnOnBit((unsigned int)Component::Position);
 	req.TurnOnBit((unsigned int)Component::Movable);
-
+	req.TurnOnBit((unsigned int)Component::Body);
 
 	m_requiredComponents.push_back(req);
 	req.Clear();
@@ -18,7 +18,16 @@ S_Movement::S_Movement(SystemManager* l_systemMgr)
 
 S_Movement::~S_Movement() {}
 
-void S_Movement::Update(float l_dT) {}
+void S_Movement::Update(float l_dT) {
+	EntityManager* entities = m_systemManager->GetEntityManager();
+	for (auto& entity : m_entities)
+	{
+		C_Body* body = entities->GetComponent<C_Body>(entity, Component::Body);
+
+		body->Move();
+		body->SetController(Controller::Stop);
+	}
+}
 
 void S_Movement::HandleEvent(const EntityId& l_entity,
 	const EntityEvent& l_event)

@@ -10,14 +10,18 @@ class MyContactListener : public b2ContactListener
         if (bodyUserDataA != NULL)
         {
             C_Body* body = (C_Body*)bodyUserDataA->GetUserData().pointer;
-            body->StartContact();
+
+            if (contact->GetFixtureA()->GetUserData().pointer == 3)
+                body->StartContact();
         }
 
         b2Body* bodyUserDataB = contact->GetFixtureB()->GetBody();
         if (bodyUserDataB != NULL)
         {
             C_Body* body = (C_Body*)bodyUserDataB->GetUserData().pointer;
-            body->StartContact();
+
+            if (contact->GetFixtureB()->GetUserData().pointer == 3)
+                body->StartContact();
         }
 
     }
@@ -28,14 +32,18 @@ class MyContactListener : public b2ContactListener
         if (bodyUserDataA != NULL)
         {
             C_Body* body = (C_Body*)bodyUserDataA->GetUserData().pointer;
-            body->EndContact();
+
+            if (contact->GetFixtureA()->GetUserData().pointer == 3)
+                body->EndContact();
         }
 
         b2Body* bodyUserDataB = contact->GetFixtureB()->GetBody();
         if (bodyUserDataB != NULL)
         {
             C_Body* body = (C_Body*)bodyUserDataB->GetUserData().pointer;
-            body->EndContact();
+
+            if (contact->GetFixtureB()->GetUserData().pointer == 3)
+                body->EndContact();
         }
     }
 };

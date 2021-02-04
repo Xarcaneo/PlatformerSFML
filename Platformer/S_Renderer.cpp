@@ -97,8 +97,14 @@ void S_Renderer::Render(Window* l_wind, unsigned int l_layer)
 		drawableBounds.top = pos.y - drawable->GetSize().y;
 		drawableBounds.width = drawable->GetSize().x;
 		drawableBounds.height = drawable->GetSize().y;
-		if (!l_wind->GetViewSpace().intersects(drawableBounds)){ continue; }
+		if (!l_wind->GetViewSpace().intersects(drawableBounds)){ 
+			if (body)
+				body->SetAwake(false);
+			continue; 
+		}
 		drawable->Draw(l_wind->GetRenderWindow());
+		if (body)
+			body->SetAwake(true);
 	}
 }
 

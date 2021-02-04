@@ -13,7 +13,7 @@
         },
         {
             "Name": "NPC/Skeleton",
-            "Position": [ 150, 0 ],
+            "Position": [ 60, 268 ],
             "Elevation": 2
         },
         {
@@ -58,7 +58,7 @@
         },
         {
             "Name": "Tiles/Rock",
-            "Position": [ 32, 0 ],
+            "Position": [ 100, 60 ],
             "Elevation": 1
         }
     ],
