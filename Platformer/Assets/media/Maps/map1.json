@@ -1,7 +1,16 @@
 {
     "Config": [
         {
-            "Background": "Bg2"
+            "Background": "Bg2",
+            "MapSize": [ 32, 32 ]
+        }
+    ],
+
+    "STATIC": [
+        {
+            "TileID": 3,
+            "Coords": [ 5, 5 ],
+            "Layer": 1
         }
     ],
 

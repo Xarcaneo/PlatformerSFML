@@ -66,8 +66,10 @@ void State_Game::UpdateCamera(){
 }
 
 void State_Game::Draw(){
-	m_gameMap->Draw();
+	m_gameMap->BackgroundDraw();
+
 	for(unsigned int i = 0; i < Sheet::Num_Layers; ++i){
+		m_gameMap->Draw(i);
 		m_stateMgr->GetContext()->m_systemManager->Draw(
 			m_stateMgr->GetContext()->m_wind, i);
 	}
