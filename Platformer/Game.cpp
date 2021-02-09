@@ -1,6 +1,7 @@
 #include "Game.h"
-Game::Game(): m_window("Chapter 8", sf::Vector2u(800,600)), 
-	m_entityManager(&m_systemManager, &m_textureManager, m_context.m_world), m_stateManager(&m_context)
+Game::Game(): m_window("Platformer", sf::Vector2u(800,600)), 
+	m_entityManager(&m_systemManager, &m_textureManager, m_context.m_world), 
+	m_stateManager(&m_context), m_soundManager(&m_audioManager)
 {
 	m_clock.restart();
 	srand(time(nullptr));
@@ -12,6 +13,8 @@ Game::Game(): m_window("Chapter 8", sf::Vector2u(800,600)),
 	m_context.m_textureManager = &m_textureManager;
 	m_context.m_systemManager = &m_systemManager;
 	m_context.m_entityManager = &m_entityManager;
+	m_context.m_audioManager = &m_audioManager;
+	m_context.m_soundManager = &m_soundManager;
 
 	// Debug:
 	m_systemManager.m_debugOverlay = &m_context.m_debugOverlay;
@@ -26,11 +29,13 @@ Window* Game::GetWindow(){ return &m_window; }
 
 void Game::Update(){
 	m_window.Update();
+	m_soundManager.Update(m_elapsed.asSeconds());
 	m_stateManager.Update(m_elapsed);
 }
 
 void Game::Render(){
 	m_window.BeginDraw();
+
 	// Render here.
 	m_stateManager.Draw();
 

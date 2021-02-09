@@ -15,6 +15,7 @@ void State_Game::OnCreate(){
 	evMgr->AddCallback(StateType::Game, "Player_MoveLeft", &State_Game::PlayerMove, this);
 	evMgr->AddCallback(StateType::Game, "Player_MoveRight", &State_Game::PlayerMove, this);
 	evMgr->AddCallback(StateType::Game, "Player_Jump", &State_Game::PlayerJump, this);
+	evMgr->AddCallback(StateType::Game, "Player_Attack", &State_Game::PlayerAttack, this);
 
 	sf::Vector2u size = m_stateMgr->GetContext()->m_wind->GetWindowSize();
 	m_view.setSize(size.x,size.y);
@@ -30,6 +31,8 @@ void State_Game::OnCreate(){
 
 	EntityManager* entities = m_stateMgr->GetContext()->m_entityManager;
 	m_player = m_gameMap->GetPlayerId();
+
+	m_stateMgr->GetContext()->m_soundManager->PlayMusic("TownTheme", 50.f, true);
 }
 
 void State_Game::OnDestroy(){
@@ -102,6 +105,12 @@ void State_Game::PlayerMove(EventDetails* l_details){
 void State_Game::PlayerJump(EventDetails* l_details)
 {
 	Message msg((MessageType)EntityMessage::Jumped);
+	msg.m_receiver = m_player;
+	m_stateMgr->GetContext()->m_systemManager->GetMessageHandler()->Dispatch(msg);
+}
+
+void State_Game::PlayerAttack(EventDetails* l_details) {
+	Message msg((MessageType)EntityMessage::Attack);
 	msg.m_receiver = m_player;
 	m_stateMgr->GetContext()->m_systemManager->GetMessageHandler()->Dispatch(msg);
 }

@@ -10,6 +10,7 @@ S_State::S_State(SystemManager* l_systemMgr)
 
 	m_systemManager->GetMessageHandler()->Subscribe(EntityMessage::Move,this);
 	m_systemManager->GetMessageHandler()->Subscribe(EntityMessage::Jumped, this);
+	m_systemManager->GetMessageHandler()->Subscribe(EntityMessage::Attack, this);
 	m_systemManager->GetMessageHandler()->Subscribe(EntityMessage::Switch_State,this);
 }
 
@@ -42,30 +43,29 @@ void S_State::Notify(const Message& l_message){
 	if (!HasEntity(l_message.m_receiver)){ return; }
 	EntityMessage m = (EntityMessage)l_message.m_type;
 
-	switch(m){
-	case EntityMessage::Move:
-		{
-			C_State* state = m_systemManager->GetEntityManager()->
-				GetComponent<C_State>(l_message.m_receiver,Component::State);
+	if(m == EntityMessage::Move)
+	{
+		C_State* state = m_systemManager->GetEntityManager()->
+			GetComponent<C_State>(l_message.m_receiver,Component::State);
 
-			if (state->GetState() == EntityState::Dying){ return; }
-			EntityEvent e;
-		    if(l_message.m_int == (int)Direction::Left){
-				e = EntityEvent::Moving_Left;
-			} else if (l_message.m_int == (int)Direction::Right){
-				e = EntityEvent::Moving_Right;
-			}
-
-			m_systemManager->AddEvent(l_message.m_receiver, (EventID)e);
-			ChangeState(l_message.m_receiver,EntityState::Walking,false);
+		if (state->GetState() == EntityState::Dying){ return; }
+		EntityEvent e;
+		if(l_message.m_int == (int)Direction::Left){
+			e = EntityEvent::Moving_Left;
+		} else if (l_message.m_int == (int)Direction::Right){
+			e = EntityEvent::Moving_Right;
 		}
-		break;
-	case EntityMessage::Switch_State: 
-		ChangeState(l_message.m_receiver,
-			(EntityState)l_message.m_int,false);
-		break;
 
-	case EntityMessage::Jumped:
+		m_systemManager->AddEvent(l_message.m_receiver, (EventID)e);
+		ChangeState(l_message.m_receiver,EntityState::Walking,false);
+	}
+	else if (m == EntityMessage::Switch_State)
+	{
+		ChangeState(l_message.m_receiver,
+			(EntityState)l_message.m_int, false);
+	}
+	else if (m == EntityMessage::Jumped)
+	{
 		C_State* state = m_systemManager->GetEntityManager()->
 			GetComponent<C_State>(l_message.m_receiver, Component::State);
 
@@ -73,7 +73,16 @@ void S_State::Notify(const Message& l_message){
 			m_systemManager->AddEvent(l_message.m_receiver, (EventID)EntityEvent::Jumping);
 			ChangeState(l_message.m_receiver, EntityState::Jumping, false);
 		}
-		break;
+	}
+	else if (m == EntityMessage::Attack)
+	{
+		C_State* state = m_systemManager->GetEntityManager()->
+			GetComponent<C_State>(l_message.m_receiver, Component::State);
+
+		if (state->GetState() != EntityState::Dying && state->GetState() != EntityState::Attacking) {
+			m_systemManager->AddEvent(l_message.m_receiver, (EventID)EntityEvent::Began_Attacking);
+			ChangeState(l_message.m_receiver, EntityState::Attacking, false);
+		}
 	}
 }
 

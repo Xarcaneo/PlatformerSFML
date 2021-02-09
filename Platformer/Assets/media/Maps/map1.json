@@ -2,80 +2,1965 @@
     "Config": [
         {
             "Background": "Bg2",
-            "MapSize": [ 32, 32 ]
-        }
-    ],
-
-    "STATIC": [
-        {
-            "TileID": 3,
-            "Coords": [ 5, 5 ],
-            "Layer": 1
+            "MapSize": [ 364, 364 ]
         }
     ],
 
     "ENTITY": [
         {
             "Name": "NPC/Player",
-            "Position": [ -10, 268 ],
-            "Elevation": 2
+            "Position": [ 30, 268 ],
+            "Elevation": 0
         },
         {
             "Name": "NPC/Skeleton",
-            "Position": [ 60, 268 ],
+            "Position": [ 1060, 268 ],
             "Elevation": 2
         },
         {
-            "Name": "Tiles/Ground",
-            "Position": [ 0, 300 ],
-            "Elevation": 1
-        },
-        {
-            "Name": "Tiles/Ground",
-            "Position": [ 32, 300 ],
-            "Elevation": 1
-        },
-        {
-            "Name": "Tiles/Ground",
-            "Position": [ 64, 300 ],
-            "Elevation": 1
-        },
-        {
-            "Name": "Tiles/Ground",
-            "Position": [ 96, 300 ],
-            "Elevation": 1
-        },
-        {
-            "Name": "Tiles/Ground",
-            "Position": [ 128, 300 ],
-            "Elevation": 1
-        },
-        {
-            "Name": "Tiles/Ground",
-            "Position": [ 160, 300 ],
-            "Elevation": 1
-        },
-        {
-            "Name": "Tiles/Ground",
-            "Position": [ 192, 300 ],
-            "Elevation": 1
-        },
-        {
-            "Name": "Tiles/Ground",
-            "Position": [ 192, 268 ],
-            "Elevation": 1
-        },
-        {
             "Name": "Tiles/Rock",
-            "Position": [ 100, 60 ],
-            "Elevation": 1
+            "Position": [ 560, 268 ],
+            "Elevation": 2
         }
     ],
 
-    "COLLISION": [
-        {
-            "Position": [ 78, 300 ],
-            "Size": [ 226, 32 ]
-        }
-    ]
-}
+
+        "COLLISION": [
+            {
+                "Position": [
+                    0.0,
+                    192.0
+                ],
+                "Size": [
+                    32.0,
+                    320.0
+                ]
+            },
+            {
+                "Position": [
+                    32.0,
+                    512.0
+                ],
+                "Size": [
+                    224.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    320.0,
+                    512.0
+                ],
+                "Size": [
+                    64.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    256.0,
+                    544.0
+                ],
+                "Size": [
+                    64.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    640.0,
+                    544.0
+                ],
+                "Size": [
+                    32.0,
+                    0.0
+                ]
+            },
+            {
+                "Position": [
+                    960.0,
+                    544.0
+                ],
+                "Size": [
+                    64.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1088.0,
+                    512.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1184.0,
+                    512.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1280.0,
+                    512.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1376.0,
+                    512.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    896.0,
+                    576.0
+                ],
+                "Size": [
+                    64.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    896.0,
+                    608.0
+                ],
+                "Size": [
+                    32.0,
+                    96.0
+                ]
+            },
+            {
+                "Position": [
+                    928.0,
+                    672.0
+                ],
+                "Size": [
+                    576.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1472.0,
+                    640.0
+                ],
+                "Size": [
+                    32.0,
+                    64.0
+                ]
+            },
+            {
+                "Position": [
+                    1472.0,
+                    608.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1472.0,
+                    544.0
+                ],
+                "Size": [
+                    32.0,
+                    64.0
+                ]
+            },
+            {
+                "Position": [
+                    1440.0,
+                    576.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1440.0,
+                    512.0
+                ],
+                "Size": [
+                    224.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    352.0,
+                    544.0
+                ],
+                "Size": [
+                    128.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    480.0,
+                    512.0
+                ],
+                "Size": [
+                    512.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    896.0,
+                    320.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1024.0,
+                    320.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1120.0,
+                    352.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1248.0,
+                    352.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1344.0,
+                    352.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1376.0,
+                    384.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1408.0,
+                    416.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1568.0,
+                    480.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1600.0,
+                    448.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            },
+            {
+                "Position": [
+                    1632.0,
+                    352.0
+                ],
+                "Size": [
+                    32.0,
+                    128.0
+                ]
+            },
+            {
+                "Position": [
+                    1472.0,
+                    416.0
+                ],
+                "Size": [
+                    32.0,
+                    32.0
+                ]
+            }
+        ],
+        "STATIC": [
+            {
+                "Coords": [
+                    0,
+                    0
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    1
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    2
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    3
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    4
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    5
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    6
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    7
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    8
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    9
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    10
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    11
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    12
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    13
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    14
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    15
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    22
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    0,
+                    23
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    1,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    1,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    2,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    2,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    3,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    3,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    3,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    4,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    4,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    4,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    5,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    5,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    5,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    5,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    5,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    6,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    6,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    6,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    6,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    7,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    7,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    7,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    8,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    8,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    9,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    9,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    10,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    10,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    10,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    11,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    11,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    11,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    12,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 0
+            },
+            {
+                "Coords": [
+                    12,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    12,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    13,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    13,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    14,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 0
+            },
+            {
+                "Coords": [
+                    14,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    14,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    15,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    15,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    15,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    15,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    16,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    16,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    16,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    17,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    17,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    17,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    17,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    18,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    18,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    18,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    18,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    18,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    19,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 0
+            },
+            {
+                "Coords": [
+                    19,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    19,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    19,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    19,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    19,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    20,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    20,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    20,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    20,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    20,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    21,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    21,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    21,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    21,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    21,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    22,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    22,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    22,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    22,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    23,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    23,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    23,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    23,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    24,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    24,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    24,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    25,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    25,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    26,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    26,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    26,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    27,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    27,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    27,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    27,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    28,
+                    10
+                ],
+                "Layer": 0,
+                "TileID": 6
+            },
+            {
+                "Coords": [
+                    28,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    28,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    28,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    28,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    28,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    28,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    29,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    29,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    29,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    29,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    30,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    30,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    30,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    31,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    31,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    32,
+                    10
+                ],
+                "Layer": 0,
+                "TileID": 6
+            },
+            {
+                "Coords": [
+                    32,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    32,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    33,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    33,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    34,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 5
+            },
+            {
+                "Coords": [
+                    34,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    34,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    35,
+                    11
+                ],
+                "Layer": 0,
+                "TileID": 6
+            },
+            {
+                "Coords": [
+                    35,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    35,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    36,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    36,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    37,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 5
+            },
+            {
+                "Coords": [
+                    37,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    37,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    38,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    38,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    39,
+                    11
+                ],
+                "Layer": 0,
+                "TileID": 6
+            },
+            {
+                "Coords": [
+                    39,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    39,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    40,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 5
+            },
+            {
+                "Coords": [
+                    40,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    40,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    41,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    41,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    42,
+                    11
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    42,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    42,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    43,
+                    12
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    43,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 5
+            },
+            {
+                "Coords": [
+                    43,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    43,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    44,
+                    13
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    44,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 7
+            },
+            {
+                "Coords": [
+                    44,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    45,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 9
+            },
+            {
+                "Coords": [
+                    45,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    45,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    46,
+                    13
+                ],
+                "Layer": 0,
+                "TileID": 8
+            },
+            {
+                "Coords": [
+                    46,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    46,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    46,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    46,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    46,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    46,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    46,
+                    23
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    47,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    47,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    47,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    47,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    47,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    47,
+                    22
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    47,
+                    23
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    48,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    48,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    48,
+                    20
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    48,
+                    21
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    49,
+                    15
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    49,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    49,
+                    17
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    49,
+                    18
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    49,
+                    19
+                ],
+                "Layer": 0,
+                "TileID": 2
+            },
+            {
+                "Coords": [
+                    50,
+                    14
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    50,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    51,
+                    11
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    51,
+                    12
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    51,
+                    13
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    51,
+                    14
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    51,
+                    15
+                ],
+                "Layer": 0,
+                "TileID": 3
+            },
+            {
+                "Coords": [
+                    51,
+                    16
+                ],
+                "Layer": 0,
+                "TileID": 3
+            }
+        ]
+    }

@@ -89,6 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,6 +107,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,6 +125,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,6 +143,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,6 +159,7 @@
     <ClInclude Include="..\External libraries\JSON\dist\json\json.h" />
     <ClInclude Include="Anim_Base.h" />
     <ClInclude Include="Anim_Directional.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="Bitmask.h" />
     <ClInclude Include="Communicator.h" />
@@ -183,6 +188,8 @@
     <ClInclude Include="Observer.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SharedContext.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="SoundProps.h" />
     <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="State_Game.h" />
@@ -210,6 +217,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="State_Game.cpp" />

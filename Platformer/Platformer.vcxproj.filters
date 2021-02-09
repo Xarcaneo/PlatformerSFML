@@ -16,9 +16,6 @@
     <Filter Include="States">
       <UniqueIdentifier>{37eabf3d-5527-482d-9b97-dcdb7858fe64}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ResourceManagers">
-      <UniqueIdentifier>{8ebdf9e9-4b14-45bb-99a1-609ab07efdca}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Framework">
       <UniqueIdentifier>{953fece3-538a-4167-af30-b2dbfd1fbbd1}</UniqueIdentifier>
     </Filter>
@@ -55,6 +52,18 @@
     <Filter Include="Collision">
       <UniqueIdentifier>{bb2b9e02-2946-4cac-992b-a5516c058f9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{8ebdf9e9-4b14-45bb-99a1-609ab07efdca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Sound">
+      <UniqueIdentifier>{cc735781-c5eb-47e9-aad9-fbdef75d05be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Graphic">
+      <UniqueIdentifier>{d656103e-25f3-4b64-8ff0-49fdd4c8a348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Base">
+      <UniqueIdentifier>{dd5d2e04-f8d6-49a3-9d5f-24cb3142f15a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State_Paused.h">
@@ -71,12 +80,6 @@
     </ClInclude>
     <ClInclude Include="State_Game.h">
       <Filter>States</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>ResourceManagers</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>ResourceManagers</Filter>
     </ClInclude>
     <ClInclude Include="BaseState.h">
       <Filter>States</Filter>
@@ -201,6 +204,21 @@
     <ClInclude Include="MyContactListener.h">
       <Filter>Collision</Filter>
     </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>Resource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Resource\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Resource\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundProps.h">
+      <Filter>Resource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Resource\Sound</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -271,6 +289,9 @@
     </ClCompile>
     <ClCompile Include="S_Movement.cpp">
       <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Resource\Sound</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

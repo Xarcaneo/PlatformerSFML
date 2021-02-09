@@ -21,32 +21,51 @@ void S_SheetAnimation::Update(float l_dT){
 		C_SpriteSheet* sheet = entities->GetComponent<C_SpriteSheet>(entity, Component::SpriteSheet);
 		C_State* state = entities->GetComponent<C_State>(entity, Component::State);
 		C_Body* body = entities->GetComponent<C_Body>(entity, Component::Body);
+		const std::string& animName = sheet->GetSpriteSheet()->GetCurrentAnim()->GetName();
 
 		sheet->GetSpriteSheet()->Update(l_dT);
 
-		if (body->GetNumContacts() == 0)
-		{
-			state->SetState(EntityState::Jumping);
-			sheet->GetSpriteSheet()->SetAnimation("Jump", true, false);
+		if (animName != "Attack" || 
+			animName == "Attack" && !sheet->GetSpriteSheet()->GetCurrentAnim()->IsPlaying()) {
+			if (body->GetNumContacts() == 0)
+			{
+				state->SetState(EntityState::Jumping);
+				sheet->GetSpriteSheet()->SetAnimation("Jump", true, false);
+			}
+
+			if (body->GetVelocity().x == 0.0f && body->GetNumContacts() > 0)
+			{
+				Message msg((MessageType)EntityMessage::Switch_State);
+				msg.m_receiver = entity;
+				msg.m_int = (int)EntityState::Idle;
+				m_systemManager->GetMessageHandler()->Dispatch(msg);
+				state->SetState(EntityState::Idle);
+				sheet->GetSpriteSheet()->SetAnimation("Idle", true, true);
+			}
 		}
 
-		if (body->GetVelocity().x == 0.0f && body->GetVelocity().y == 0.0f )
-		{
-			state->SetState(EntityState::Idle);
-			sheet->GetSpriteSheet()->SetAnimation("Idle", true, true);
-		}
-
-		const std::string& animName = sheet->GetSpriteSheet()->GetCurrentAnim()->GetName();
-		if (animName == "Jump") {
+		if (animName == "Attack") {
 			if (!sheet->GetSpriteSheet()->GetCurrentAnim()->IsPlaying())
 			{
-				if (body->GetNumContacts() > 0)
-				{
-					Message msg((MessageType)EntityMessage::Switch_State);
-					msg.m_receiver = entity;
-					msg.m_int = (int)EntityState::Idle;
-					m_systemManager->GetMessageHandler()->Dispatch(msg);
-				}
+				Message msg((MessageType)EntityMessage::Switch_State);
+				msg.m_receiver = entity;
+				msg.m_int = (int)EntityState::Idle;
+				m_systemManager->GetMessageHandler()->Dispatch(msg);
+			}
+			else if (sheet->GetSpriteSheet()->GetCurrentAnim()->IsInAction())
+			{
+				Message msg((MessageType)EntityMessage::Attack_Action);
+				msg.m_sender = entity;
+				m_systemManager->GetMessageHandler()->Dispatch(msg);
+			}
+		}
+		else if (animName == "Jump") {
+			if (body->GetNumContacts() > 0)
+			{
+				Message msg((MessageType)EntityMessage::Switch_State);
+				msg.m_receiver = entity;
+				msg.m_int = (int)EntityState::Idle;
+				m_systemManager->GetMessageHandler()->Dispatch(msg);
 			}
 		}
 	}
@@ -70,10 +89,11 @@ void S_SheetAnimation::Notify(const Message& l_message){
 					ChangeAnimation(l_message.m_receiver,"Idle",true,true);
 					break;
 				case EntityState::Walking:
-					if(animName != "Jump")
+					if(animName != "Jump" && animName != "Attack")
 					ChangeAnimation(l_message.m_receiver,"Walk",true,true);
 					break;
 				case EntityState::Jumping:
+					if (animName != "Attack")
 					ChangeAnimation(l_message.m_receiver, "Jump", true, false);
 					break;
 				case EntityState::Attacking:

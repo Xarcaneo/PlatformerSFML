@@ -81,6 +81,7 @@ void StateManager::ProcessRequests(){
 
 void StateManager::SwitchTo(const StateType& l_type){
 	m_shared->m_eventManager->SetCurrentState(l_type);
+	m_shared->m_soundManager->ChangeState(l_type);
 	for (auto itr = m_states.begin();
 		itr != m_states.end(); ++itr)
 	{
@@ -126,6 +127,7 @@ void StateManager::RemoveState(const StateType& l_type){
 			itr->second->OnDestroy();
 			delete itr->second;
 			m_states.erase(itr);
+			m_shared->m_soundManager->RemoveState(l_type);
 			return;
 		}
 	}

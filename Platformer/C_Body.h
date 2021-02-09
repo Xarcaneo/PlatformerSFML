@@ -48,7 +48,7 @@ public:
 
         //Foot Sensor
         sf::Vector2f footSize;
-        footSize.x = m_size.x * 0.40;
+        footSize.x = m_size.x * 0.90;
         footSize.y = m_size.y * 0.05;
         float footPosition = converter::pixelsToMeters((m_size.y) * 0.50);
 

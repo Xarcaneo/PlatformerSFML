@@ -142,8 +142,8 @@ void Map::LoadMap(const std::string& l_path){
 			b2BodyDef BodyDef;
 			BodyDef.fixedRotation = true;
 			BodyDef.type = b2_staticBody;
-			BodyDef.position = b2Vec2(converter::pixelsToMeters<float>(pos.x),
-				converter::pixelsToMeters<float>(pos.y));
+			BodyDef.position = b2Vec2(converter::pixelsToMeters<float>(pos.x + size.x / 2),
+				converter::pixelsToMeters<float>(pos.y + size.y / 2));
 			BodyDef.userData.pointer = reinterpret_cast<uintptr_t>(this);
 
 			b2Body* collisionBox;

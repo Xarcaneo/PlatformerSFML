@@ -7,5 +7,5 @@ enum class Component{
 };
 
 enum class System{
-	Renderer = 0, Control, State, SheetAnimation, Movement
+	Renderer = 0, Control, State, SheetAnimation, Movement, Sound
 };

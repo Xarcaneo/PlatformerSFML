@@ -28,4 +28,6 @@ private:
 	SystemManager m_systemManager;
 	EntityManager m_entityManager;
 	StateManager m_stateManager;
+	AudioManager m_audioManager;
+	SoundManager m_soundManager;
 };
