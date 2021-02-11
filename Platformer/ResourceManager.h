@@ -33,7 +33,7 @@ public:
 		auto path = m_paths.find(l_id);
 		if (path == m_paths.end()){ return false; }
 		T* resource = Load(path->second);
-		if (!resource){ return false; }
+		if (!resource) { return false; }
 		m_resources.emplace(l_id, std::make_pair(resource, 1));
 		return true;
 	}

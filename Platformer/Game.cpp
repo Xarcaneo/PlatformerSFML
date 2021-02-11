@@ -1,7 +1,7 @@
 #include "Game.h"
 Game::Game(): m_window("Platformer", sf::Vector2u(800,600)), 
 	m_entityManager(&m_systemManager, &m_textureManager, m_context.m_world), 
-	m_stateManager(&m_context), m_soundManager(&m_audioManager)
+	m_stateManager(&m_context), m_soundManager(&m_audioManager), m_systemManager()
 {
 	m_clock.restart();
 	srand(time(nullptr));
@@ -15,6 +15,12 @@ Game::Game(): m_window("Platformer", sf::Vector2u(800,600)),
 	m_context.m_entityManager = &m_entityManager;
 	m_context.m_audioManager = &m_audioManager;
 	m_context.m_soundManager = &m_soundManager;
+
+	m_systemManager.GetSystem<S_Sound>(System::Sound)->
+		SetUp(&m_audioManager, &m_soundManager);
+
+	m_systemManager.GetSystem<S_CharacterUI>(System::Character_UI)->
+		SetUp(&m_textureManager);
 
 	// Debug:
 	m_systemManager.m_debugOverlay = &m_context.m_debugOverlay;

@@ -1,5 +1,9 @@
-Audio TestSound
+Audio Glass
+Sound
 Volume 100
+
 Pitch 1.0
+
 Distance 150
-Attenuation 1
+
+Attenuation 3

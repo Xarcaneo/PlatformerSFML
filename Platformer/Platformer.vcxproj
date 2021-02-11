@@ -107,7 +107,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,7 +143,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Patryk\source\repos\Platformer\External libraries\JSON\include;C:\Users\Patryk\source\repos\Platformer\External libraries\BOX2D\include;C:\Users\Patryk\source\repos\Platformer\External libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -168,10 +168,15 @@
     <ClInclude Include="C_Body.h" />
     <ClInclude Include="C_Controller.h" />
     <ClInclude Include="C_Drawable.h" />
+    <ClInclude Include="C_Health.h" />
     <ClInclude Include="C_Position.h" />
     <ClInclude Include="C_SingleSprite.h" />
+    <ClInclude Include="C_SoundEmitter.h" />
+    <ClInclude Include="C_SoundListener.h" />
     <ClInclude Include="C_SpriteSheet.h" />
     <ClInclude Include="C_State.h" />
+    <ClInclude Include="C_TimedComponentBase.h" />
+    <ClInclude Include="C_UI_Element.h" />
     <ClInclude Include="DebugOverlay.h" />
     <ClInclude Include="Directions.h" />
     <ClInclude Include="ECS_Types.h" />
@@ -199,10 +204,12 @@
     <ClInclude Include="State_Paused.h" />
     <ClInclude Include="System_Manager.h" />
     <ClInclude Include="S_Base.h" />
+    <ClInclude Include="S_CharacterUI.h" />
     <ClInclude Include="S_Control.h" />
     <ClInclude Include="S_Movement.h" />
     <ClInclude Include="S_Renderer.h" />
     <ClInclude Include="S_SheetAnimation.h" />
+    <ClInclude Include="S_Sound.h" />
     <ClInclude Include="S_State.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Window.h" />
@@ -226,10 +233,12 @@
     <ClCompile Include="State_Paused.cpp" />
     <ClCompile Include="System_Manager.cpp" />
     <ClCompile Include="S_Base.cpp" />
+    <ClCompile Include="S_CharacterUI.cpp" />
     <ClCompile Include="S_Control.cpp" />
     <ClCompile Include="S_Movement.cpp" />
     <ClCompile Include="S_Renderer.cpp" />
     <ClCompile Include="S_SheetAnimation.cpp" />
+    <ClCompile Include="S_Sound.cpp" />
     <ClCompile Include="S_State.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>

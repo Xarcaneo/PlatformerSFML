@@ -6,6 +6,8 @@
 #include "S_State.h"
 #include "S_SheetAnimation.h"
 #include "S_Movement.h"
+#include "S_Sound.h"
+#include "S_CharacterUI.h"
 #include "Event_Queue.h"
 #include "MessageHandler.h"
 #include <unordered_map>
@@ -14,6 +16,7 @@
 using SystemContainer = std::unordered_map<System,S_Base*>;
 using EntityEventContainer = std::unordered_map<EntityId,EventQueue>;
 
+class SharedContext;
 class EntityManager;
 class SystemManager{
 public:

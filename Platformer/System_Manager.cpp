@@ -6,7 +6,10 @@ SystemManager::SystemManager(): m_entityManager(nullptr){
 	m_systems[System::Control] = new S_Control(this);
 	m_systems[System::Movement] = new S_Movement(this);
 	m_systems[System::SheetAnimation] = new S_SheetAnimation(this);
+	m_systems[System::Sound] = new S_Sound(this);
 	m_systems[System::Renderer] = new S_Renderer(this);
+	m_systems[System::Sound] = new S_Sound(this);
+	m_systems[System::Character_UI] = new S_CharacterUI(this);
 }
 
 SystemManager::~SystemManager(){
@@ -55,9 +58,15 @@ void SystemManager::HandleEvents(){
 void SystemManager::Draw(Window* l_wind, unsigned int l_elevation)
 {
 	auto itr = m_systems.find(System::Renderer);
-	if (itr == m_systems.end()){ return; }
-	S_Renderer* system = (S_Renderer*)itr->second;
-	system->Render(l_wind, l_elevation);
+	if (itr != m_systems.end()) {
+		S_Renderer* system = (S_Renderer*)itr->second;
+		system->Render(l_wind, l_elevation);
+	}
+	itr = m_systems.find(System::Character_UI);
+	if (itr != m_systems.end()) {
+		S_CharacterUI* ui = (S_CharacterUI*)itr->second;
+		ui->Render(l_wind);
+	}
 }
 
 void SystemManager::EntityModified(const EntityId& l_entity, const Bitmask& l_bits)

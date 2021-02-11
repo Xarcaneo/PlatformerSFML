@@ -32,7 +32,7 @@ void State_Game::OnCreate(){
 	EntityManager* entities = m_stateMgr->GetContext()->m_entityManager;
 	m_player = m_gameMap->GetPlayerId();
 
-	m_stateMgr->GetContext()->m_soundManager->PlayMusic("TownTheme", 50.f, true);
+	m_stateMgr->GetContext()->m_soundManager->PlayMusic("TownTheme", 5.0f, true);
 }
 
 void State_Game::OnDestroy(){

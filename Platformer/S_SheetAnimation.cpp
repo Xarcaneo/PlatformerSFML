@@ -68,6 +68,15 @@ void S_SheetAnimation::Update(float l_dT){
 				m_systemManager->GetMessageHandler()->Dispatch(msg);
 			}
 		}
+
+		if (sheet->GetSpriteSheet()->GetCurrentAnim()->CheckMoved()) {
+			int frame = sheet->GetSpriteSheet()->GetCurrentAnim()->GetFrame();
+			if (frame == 0) frame++;
+			Message msg((MessageType)EntityMessage::Frame_Change);
+			msg.m_receiver = entity;
+			msg.m_int = frame;
+			m_systemManager->GetMessageHandler()->Dispatch(msg);
+		}
 	}
 }
 

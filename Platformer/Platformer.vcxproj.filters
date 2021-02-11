@@ -16,9 +16,6 @@
     <Filter Include="States">
       <UniqueIdentifier>{37eabf3d-5527-482d-9b97-dcdb7858fe64}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Framework">
-      <UniqueIdentifier>{953fece3-538a-4167-af30-b2dbfd1fbbd1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Entities">
       <UniqueIdentifier>{4e2e7760-06a0-43c2-972c-d4c101147f66}</UniqueIdentifier>
     </Filter>
@@ -63,6 +60,9 @@
     </Filter>
     <Filter Include="Resource\Base">
       <UniqueIdentifier>{dd5d2e04-f8d6-49a3-9d5f-24cb3142f15a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{953fece3-538a-4167-af30-b2dbfd1fbbd1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +219,27 @@
     <ClInclude Include="SoundManager.h">
       <Filter>Resource\Sound</Filter>
     </ClInclude>
+    <ClInclude Include="S_Sound.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="C_SoundEmitter.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="C_SoundListener.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="C_UI_Element.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="S_CharacterUI.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Health.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="C_TimedComponentBase.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -292,6 +313,12 @@
     </ClCompile>
     <ClCompile Include="SoundManager.cpp">
       <Filter>Resource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Sound.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="S_CharacterUI.cpp">
+      <Filter>Entities\ESystems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

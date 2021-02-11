@@ -9,7 +9,7 @@ public:
 	sf::SoundBuffer* Load(const std::string& l_path){
 		sf::SoundBuffer* sound = new sf::SoundBuffer();
 		if (!sound->loadFromFile(
-			"Assests/" + l_path))
+			"Assets/" + l_path))
 		{
 			delete sound;
 			sound = nullptr;

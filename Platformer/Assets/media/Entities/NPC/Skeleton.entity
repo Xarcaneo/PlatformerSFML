@@ -1,5 +1,5 @@
 Name Skeleton
-Attributes 59
+Attributes 1595
 |Component|ID|Individual attributes|
 Component 0 0 0 1
 Component 1 Player
@@ -8,4 +8,7 @@ Component 3 0
 Component 4
 Component 5 1 2 1 0.5 0 32 32 100
 Component 6
-
+Component 7
+Component 8
+Component 9 5 333 2000
+Component 10 0 -15
