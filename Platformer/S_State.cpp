@@ -86,15 +86,22 @@ void S_State::Notify(const Message& l_message){
 	}
 }
 
-void S_State::ChangeState(const EntityId& l_entity, 
-	const EntityState& l_state, const bool l_force)
+void S_State::ChangeState(const EntityId& l_entity,
+	const EntityState& l_state, bool l_force)
 {
 	EntityManager* entities = m_systemManager->GetEntityManager();
 	C_State* state = entities->GetComponent<C_State>(l_entity, Component::State);
-	if (!l_force && state->GetState() == EntityState::Dying){ return; }
+	if (state->GetState() == l_state) { return; }
+	if (state->GetState() == EntityState::Dying) { return; }
 	state->SetState(l_state);
 	Message msg((MessageType)EntityMessage::State_Changed);
 	msg.m_receiver = l_entity;
 	msg.m_int = (int)l_state;
 	m_systemManager->GetMessageHandler()->Dispatch(msg);
+}
+
+EntityState S_State::GetState(const EntityId& l_entity) {
+	EntityManager* entities = m_systemManager->GetEntityManager();
+	C_State* state = entities->GetComponent<C_State>(l_entity, Component::State);
+	return state->GetState();
 }

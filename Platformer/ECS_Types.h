@@ -4,9 +4,10 @@ using ComponentType = unsigned int;
 
 enum class Component{
 	Position = 0, SpriteSheet, SingleSprite, State, Controller, Body, 
-	Movable, SoundEmitter, SoundListener, Health,  UI_Element, 
+	Movable, SoundEmitter, SoundListener, Health,  UI_Element, Attacker, Collidable
 };
 
 enum class System{
-	Renderer = 0, Control, State, SheetAnimation, Movement, Sound, Character_UI
+	Renderer = 0, Control, State, SheetAnimation, Movement, Sound, Character_UI, Collision,
+	Combat, Timers
 };

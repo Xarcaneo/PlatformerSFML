@@ -85,6 +85,12 @@ public:
        return this->m_body->GetLinearVelocity();
     }
 
+    void SetVelocity(sf::Vector2f velocity)
+    {
+        b2Vec2 l_velocity = { velocity.x, velocity.y };
+        m_body->SetLinearVelocity(l_velocity);
+    }
+
     const float GetAngle() {
         return m_body->GetAngle();
     }

@@ -10,6 +10,9 @@ SystemManager::SystemManager(): m_entityManager(nullptr){
 	m_systems[System::Renderer] = new S_Renderer(this);
 	m_systems[System::Sound] = new S_Sound(this);
 	m_systems[System::Character_UI] = new S_CharacterUI(this);
+	m_systems[System::Collision] = new S_Collision(this);
+	m_systems[System::Combat] = new S_Combat(this);
+	m_systems[System::Timers] = new S_Timers(this);
 }
 
 SystemManager::~SystemManager(){
@@ -38,7 +41,7 @@ void SystemManager::Update(float l_dT){
 	for(auto &itr : m_systems){
 		itr.second->Update(l_dT);
 	}
-	HandleEvents();
+	HandleEvents(); 
 }
 
 void SystemManager::HandleEvents(){

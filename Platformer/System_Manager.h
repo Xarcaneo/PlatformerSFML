@@ -8,6 +8,9 @@
 #include "S_Movement.h"
 #include "S_Sound.h"
 #include "S_CharacterUI.h"
+#include "S_Collision.h"
+#include "S_Combat.h"
+#include "S_Timers.h"
 #include "Event_Queue.h"
 #include "MessageHandler.h"
 #include <unordered_map>

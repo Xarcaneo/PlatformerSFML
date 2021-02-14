@@ -9,6 +9,8 @@
 #include "C_Controller.h"
 #include "C_Health.h"
 #include "C_UI_Element.h"
+#include "C_Collidable.h"
+#include "C_Attacker.h"
 #include "Bitmask.h"
 #include "TextureManager.h"
 #include <unordered_map>

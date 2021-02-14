@@ -18,6 +18,11 @@
             "Elevation": 2
         },
         {
+            "Name": "NPC/Skeleton",
+            "Position": [ 100, 268 ],
+            "Elevation": 2
+        },
+        {
             "Name": "Tiles/Rock",
             "Position": [ 560, 268 ],
             "Elevation": 2

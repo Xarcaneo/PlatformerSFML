@@ -16,6 +16,8 @@ EntityManager::EntityManager(SystemManager* l_sysMgr,
 	AddComponentType<C_SoundListener>(Component::SoundListener);
 	AddComponentType<C_Health>(Component::Health);
 	AddComponentType<C_UI_Element>(Component::UI_Element);
+	AddComponentType<C_Collidable>(Component::Collidable);
+	AddComponentType<C_Attacker>(Component::Attacker);
 }
 
 EntityManager::~EntityManager(){ Purge(); }

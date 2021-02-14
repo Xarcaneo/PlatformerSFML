@@ -240,6 +240,21 @@
     <ClInclude Include="C_TimedComponentBase.h">
       <Filter>Entities\EComponents</Filter>
     </ClInclude>
+    <ClInclude Include="C_Attacker.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Collision.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Collidable.h">
+      <Filter>Entities\EComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Combat.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Timers.h">
+      <Filter>Entities\ESystems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -318,6 +333,15 @@
       <Filter>Entities\ESystems</Filter>
     </ClCompile>
     <ClCompile Include="S_CharacterUI.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Collision.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Combat.cpp">
+      <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Timers.cpp">
       <Filter>Entities\ESystems</Filter>
     </ClCompile>
   </ItemGroup>

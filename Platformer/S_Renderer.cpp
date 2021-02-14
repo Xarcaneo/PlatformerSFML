@@ -105,6 +105,31 @@ void S_Renderer::Render(Window* l_wind, unsigned int l_layer)
 		drawable->Draw(l_wind->GetRenderWindow());
 		if (body)
 			body->SetAwake(true);
+
+		C_Collidable* collidable = entities->GetComponent<C_Collidable>(entity, Component::Collidable);
+		if(collidable)
+		{
+			sf::RectangleShape shape;
+			//shape.setTextureRect(collidable->GetCollidable());
+			shape.setSize(sf::Vector2f(collidable->GetCollidable().width, 
+				collidable->GetCollidable().height));
+			shape.setPosition(collidable->GetCollidable().left, collidable->GetCollidable().top);
+			shape.setFillColor(sf::Color::Transparent);
+			shape.setOutlineThickness(1);
+			shape.setOutlineColor(sf::Color::Red);
+			l_wind->GetRenderWindow()->draw(shape);
+		}
+		C_Attacker* attacker = entities->GetComponent<C_Attacker>(entity, Component::Attacker);
+		if (attacker)
+		{
+			sf::RectangleShape shape;
+			shape.setSize(sf::Vector2f(attacker->GetAreaOfAttack().width, attacker->GetAreaOfAttack().height));
+			shape.setPosition(attacker->GetAreaOfAttack().left, attacker->GetAreaOfAttack().top);
+			shape.setFillColor(sf::Color::Transparent);
+			shape.setOutlineThickness(1);
+			shape.setOutlineColor(sf::Color::Green);
+			l_wind->GetRenderWindow()->draw(shape);
+		}
 	}
 }
 
