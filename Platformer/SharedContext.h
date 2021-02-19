@@ -7,20 +7,24 @@
 #include "AudioManager.h"
 #include "SoundManager.h"
 #include "Entity_Manager.h"
+#include "FontManager.h"
 #include "DebugOverlay.h"
+#include "Properties.h"
 
 class Map;
 
 struct SharedContext{
-	SharedContext():
+	SharedContext() :
 		m_wind(nullptr),
 		m_eventManager(nullptr),
 		m_textureManager(nullptr),
 		m_systemManager(nullptr),
 		m_audioManager(nullptr),
 		m_soundManager(nullptr),
+		m_fontManager(nullptr),
 		m_entityManager(nullptr),
 		m_gameMap(nullptr),
+		m_loadingProperties(nullptr),
 		m_world(new b2World(b2Vec2(0, 9.81f))){}
 
 	Window* m_wind;
@@ -30,7 +34,9 @@ struct SharedContext{
 	EntityManager* m_entityManager;
 	AudioManager* m_audioManager;
 	SoundManager* m_soundManager;
+	FontManager* m_fontManager;
 	Map* m_gameMap;
 	b2World* m_world;
 	DebugOverlay m_debugOverlay;
+	LoadingProperties* m_loadingProperties;
 };

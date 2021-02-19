@@ -88,7 +88,10 @@ void State_MainMenu::MouseClick(EventDetails* l_details){
 			mousePos.y<=m_rects[i].getPosition().y + halfY)
 		{
 			if(i == 0){
-				m_stateMgr->SwitchTo(StateType::Game);
+				if(context->m_loadingProperties->m_loading)
+					m_stateMgr->SwitchTo(StateType::Loading);
+				else
+					m_stateMgr->SwitchTo(StateType::Game);
 			} else if(i == 1){
 				// Credits state.
 			} else if(i == 2){

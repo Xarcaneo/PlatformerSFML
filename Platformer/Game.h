@@ -3,6 +3,8 @@
 #include "EventManager.h"
 #include "StateManager.h"
 #include "TextureManager.h"
+#include "FontManager.h"
+#include "Properties.h"
 #include <iostream>
 
 class Game{
@@ -30,4 +32,6 @@ private:
 	StateManager m_stateManager;
 	AudioManager m_audioManager;
 	SoundManager m_soundManager;
+	FontManager m_fontManager;
+	LoadingProperties m_loadingProperties;
 };

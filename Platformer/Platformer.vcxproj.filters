@@ -64,6 +64,9 @@
     <Filter Include="Framework">
       <UniqueIdentifier>{953fece3-538a-4167-af30-b2dbfd1fbbd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource\Font">
+      <UniqueIdentifier>{1993b77c-c621-4567-9037-61c54b63b281}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State_Paused.h">
@@ -255,6 +258,15 @@
     <ClInclude Include="S_Timers.h">
       <Filter>Entities\ESystems</Filter>
     </ClInclude>
+    <ClInclude Include="State_Loading.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Resource\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Properties.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -343,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="S_Timers.cpp">
       <Filter>Entities\ESystems</Filter>
+    </ClCompile>
+    <ClCompile Include="State_Loading.cpp">
+      <Filter>States</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -187,12 +187,14 @@
     <ClInclude Include="Entity_Manager.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Event_Queue.h" />
+    <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="MyContactListener.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="Properties.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SharedContext.h" />
     <ClInclude Include="SoundManager.h" />
@@ -202,6 +204,7 @@
     <ClInclude Include="State_Game.h" />
     <ClInclude Include="State_GameOver.h" />
     <ClInclude Include="State_Intro.h" />
+    <ClInclude Include="State_Loading.h" />
     <ClInclude Include="State_MainMenu.h" />
     <ClInclude Include="State_Paused.h" />
     <ClInclude Include="System_Manager.h" />
@@ -234,6 +237,7 @@
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="State_Game.cpp" />
     <ClCompile Include="State_Intro.cpp" />
+    <ClCompile Include="State_Loading.cpp" />
     <ClCompile Include="State_MainMenu.cpp" />
     <ClCompile Include="State_Paused.cpp" />
     <ClCompile Include="System_Manager.cpp" />

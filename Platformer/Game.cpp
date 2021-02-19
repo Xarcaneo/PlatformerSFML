@@ -15,6 +15,10 @@ Game::Game(): m_window("Platformer", sf::Vector2u(800,600)),
 	m_context.m_entityManager = &m_entityManager;
 	m_context.m_audioManager = &m_audioManager;
 	m_context.m_soundManager = &m_soundManager;
+	m_context.m_fontManager = &m_fontManager;
+
+	m_loadingProperties.m_loading = true;
+	m_context.m_loadingProperties = &m_loadingProperties;
 
 	m_systemManager.GetSystem<S_Sound>(System::Sound)->
 		SetUp(&m_audioManager, &m_soundManager);

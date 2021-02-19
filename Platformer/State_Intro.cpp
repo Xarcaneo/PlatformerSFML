@@ -30,7 +30,7 @@ void State_Intro::OnCreate(){
 
 	EventManager* evMgr = m_stateMgr->
 		GetContext()->m_eventManager;
-	evMgr->AddCallback(StateType::Intro, "Intro_Continue",&State_Intro::Continue,this);
+	evMgr->AddCallback(StateType::Intro, "Key_Space",&State_Intro::Continue,this);
 }
 
 void State_Intro::OnDestroy(){
@@ -39,7 +39,7 @@ void State_Intro::OnDestroy(){
 
 	EventManager* evMgr = m_stateMgr->
 		GetContext()->m_eventManager;
-	evMgr->RemoveCallback(StateType::Intro,"Intro_Continue");
+	evMgr->RemoveCallback(StateType::Intro,"Key_Space");
 }
 
 void State_Intro::Draw(){

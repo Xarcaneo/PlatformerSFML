@@ -26,8 +26,7 @@ void State_Game::OnCreate(){
 	m_world = m_stateMgr->GetContext()->m_world;
 	m_world->SetContactListener(new MyContactListener);
 
-	m_gameMap = new Map(m_stateMgr->GetContext(), this);
-	m_gameMap->LoadMap("Assets/media/Maps/map1.json");
+	m_gameMap = m_stateMgr->GetContext()->m_gameMap;
 
 	EntityManager* entities = m_stateMgr->GetContext()->m_entityManager;
 	m_player = m_gameMap->GetPlayerId();
@@ -45,7 +44,6 @@ void State_Game::OnDestroy(){
 	evMgr->RemoveCallback(StateType::Game, "Player_MoveUp");
 	
 	delete m_gameMap;
-	m_gameMap = nullptr;
 }
 
 void State_Game::Update(const sf::Time& l_time){
