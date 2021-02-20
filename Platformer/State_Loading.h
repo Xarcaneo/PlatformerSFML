@@ -16,9 +16,8 @@ public:
 
 	void Update(const sf::Time& l_time);
 	void Draw();
-
-	void Continue(EventDetails* l_details);
 private:
 	sf::Text m_text;
 	sf::Sprite m_loadingSprite;
+	Map* m_gameMap;
 };

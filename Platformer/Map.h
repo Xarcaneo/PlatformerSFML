@@ -1,5 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Thread.hpp>
+#include <SFML/System/Mutex.hpp>
+#include <SFML/System/Lock.hpp>
 #include <BOX2D/box2d.h>
 #include <json/json.h>
 #include <unordered_map>
@@ -60,12 +63,16 @@ public:
 	unsigned int GetTileSize()const;
 	int GetPlayerId()const;
 
-	void LoadMap(const std::string& l_path);
+	void LoadMap();
 	void LoadTiles(const std::string& l_path);
 
 	void Update(float l_dT);
 	void Draw(unsigned int l_layer);
 	void BackgroundDraw();
+
+	void Execute();
+	bool IsLoaded();
+	//float GetCompletion();
 private:
 	// Method for converting 2D coordinates to 1D ints.
 	unsigned int ConvertCoords(unsigned int l_x, unsigned int l_y, unsigned int l_layer)const;
@@ -83,4 +90,9 @@ private:
 	TileMap m_tileMap;
 	unsigned int m_tileCount;
 	unsigned int m_tileSetCount;
+
+	void RunTask();
+	sf::Thread	m_thread;
+	bool m_loaded;
+	sf::Mutex m_mutex;
 };

@@ -20,9 +20,9 @@ void State_Loading::OnCreate()
 	m_view.zoom(0.6f);
 	m_stateMgr->GetContext()->m_wind->GetRenderWindow()->setView(m_view);
 
-	Map* l_gameMap = new Map(m_stateMgr->GetContext(), this);
-	l_gameMap->LoadMap("Assets/media/Maps/map1.json");
-	m_stateMgr->GetContext()->m_gameMap = l_gameMap;
+	this->m_gameMap = new Map(m_stateMgr->GetContext(), this);
+	this->m_gameMap->Execute();
+	m_stateMgr->GetContext()->m_gameMap = this->m_gameMap;
 	m_stateMgr->GetContext()->m_loadingProperties->m_loading = false;
 
 	m_view.reset(sf::FloatRect(0,0,size.x,size.y));
@@ -49,17 +49,11 @@ void State_Loading::OnCreate()
 		textRect.top + textRect.height / 2.0f);
 	m_text.setPosition(m_loadingSprite.getPosition().x,
 		m_loadingSprite.getPosition().y + textureMgr->GetResource("Loading")->getSize().y / 1.5f);
-
-	EventManager* evMgr = m_stateMgr->
-		GetContext()->m_eventManager;
-	evMgr->AddCallback(StateType::Loading, "Key_Space", &State_Loading::Continue, this);
 }
 
 void State_Loading::OnDestroy()
 {
 	auto context = m_stateMgr->GetContext();
-	EventManager* evMgr = context->m_eventManager;
-	evMgr->RemoveCallback(StateType::Loading, "Key_Space");
 
 	TextureManager* textureMgr = m_stateMgr->GetContext()->m_textureManager;
 	textureMgr->ReleaseResource("Loading");
@@ -73,20 +67,19 @@ void State_Loading::Deactivate()
 {
 }
 
-void State_Loading::Continue(EventDetails* l_details)
-{
-	m_stateMgr->SwitchTo(StateType::Game);
-}
-
 void State_Loading::Draw()
 {
 	sf::RenderWindow* window = m_stateMgr->
 		GetContext()->m_wind->GetRenderWindow();
 
 	window->draw(m_loadingSprite);
-	window->draw(m_text);
+
+	if (m_gameMap->IsLoaded())
+		window->draw(m_text);
 }
 
 void State_Loading::Update(const sf::Time& l_time)
 {
+	if (m_gameMap->IsLoaded())
+		m_stateMgr->SwitchTo(StateType::Game);
 }

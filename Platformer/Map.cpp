@@ -2,7 +2,8 @@
 #include "StateManager.h"
 
 Map::Map(SharedContext* l_context, BaseState* l_currentState)
-	:m_context(l_context), m_playerId(-1), m_currentState(l_currentState), m_maxMapSize(0,0)
+	:m_context(l_context), m_playerId(-1), m_currentState(l_currentState), m_maxMapSize(0,0),
+	 m_thread(&Map::LoadMap, this), m_loaded(false)
 {
 	m_context->m_gameMap = this;
 	LoadTiles("tiles.cfg");
@@ -28,8 +29,10 @@ Tile* Map::GetTile(unsigned int l_x, unsigned int l_y, unsigned int l_layer)
 
 int Map::GetPlayerId()const{ return m_playerId; }
 
-void Map::LoadMap(const std::string& l_path){
+void Map::LoadMap(){
 	
+	std::string l_path = "Assets/media/Maps/map1.json";
+
 	Json::Value root;   // will contain the root value after parsing.
 	Json::CharReaderBuilder builder;
 	 
@@ -166,6 +169,12 @@ void Map::LoadMap(const std::string& l_path){
 	}
 
 	mapFile.close();
+
+	{
+		sf::Lock lock(m_mutex);
+		m_loaded = true;
+	}
+
 	std::cout << "--- Map Loaded! ---" << std::endl;
 }
 
@@ -249,3 +258,16 @@ void Map::PurgeTileSet() {
 	}
 	m_tileSetCount = 0;
 }
+
+void Map::Execute()
+{
+	m_loaded = false;
+	m_thread.launch();
+}
+
+bool Map::IsLoaded()
+{
+	sf::Lock lock(m_mutex);
+	return m_loaded;
+}
+

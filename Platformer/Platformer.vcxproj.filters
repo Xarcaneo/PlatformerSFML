@@ -67,6 +67,9 @@
     <Filter Include="Resource\Font">
       <UniqueIdentifier>{1993b77c-c621-4567-9037-61c54b63b281}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{7403cf25-7af9-45ae-99fe-39d20dba45c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State_Paused.h">
@@ -161,9 +164,6 @@
     </ClInclude>
     <ClInclude Include="Anim_Directional.h">
       <Filter>Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Converter.h">
       <Filter>Header Files</Filter>
@@ -267,6 +267,9 @@
     <ClInclude Include="Properties.h">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -307,9 +310,6 @@
     </ClCompile>
     <ClCompile Include="S_Renderer.cpp">
       <Filter>Entities\ESystems</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteSheet.cpp">
       <Filter>Animations</Filter>
@@ -358,6 +358,9 @@
     </ClCompile>
     <ClCompile Include="State_Loading.cpp">
       <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Map</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
